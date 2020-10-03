@@ -155,3 +155,8 @@ button.option:hover{
 	width: auto;
     white-space: normal;
 }
+
+img {
+	max-width: 8%;
+	max-height: 8%;
+}
