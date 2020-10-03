@@ -51,12 +51,15 @@ module.exports = class Header extends component {
 
 		this.earthDiv.classList.add('row');
 		this.marsDiv.classList.add('row')
+		this.earthDiv.style.justifyContent = 'flex-end';
+		this.marsDiv.style.justifyContent = 'flex-end';
 
-		this.earthDiv.appendChild(this.earthRotate)
+		
 		this.earthDiv.appendChild(this.earthClock)
+		this.earthDiv.appendChild(this.earthRotate)
 
-		this.marsDiv.appendChild(this.marsRotate)
 		this.marsDiv.appendChild(this.marsClock)
+		this.marsDiv.appendChild(this.marsRotate)
 
 		this.htmlComponent.appendChild(this.earthDiv)
 		this.htmlComponent.appendChild(this.marsDiv)
