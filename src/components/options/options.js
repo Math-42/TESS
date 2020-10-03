@@ -2,18 +2,27 @@ const component = require('../component');
 const Option = require('./option');
 const OptionGroup = require('./optionGroup');
 
-module.exports =  class Options extends component{
-	constructor(){
+module.exports = class Options extends component {
+	constructor() {
 		super();
 		this.optionsGroups = {};
 	}
-	setCurrentOptionGroup(newOptionGroupName){
+	setCurrentOptionGroup(newOptionGroupName) {
 		document.getElementById('menus').innerHTML = '';
 		document.getElementById('menus').appendChild(this.optionsGroups[newOptionGroupName])
 	}
-	build(){
+	callMenuFunction(name) {
+		
+		return () => {
+			window.dispatchEvent(new CustomEvent('showDisplay', {
+				detail: name,
+			}));
+		}
+	}
+	build() {
 		let mainMenuOptionGroup = new OptionGroup();
-		mainMenuOptionGroup.addOption('./Communication')
+		mainMenuOptionGroup.addOption('./Communication',this.callMenuFunction("ok"))
+		mainMenuOptionGroup.addOption('./Packages',this.callMenuFunction('PackageDisplay'))
 		mainMenuOptionGroup.addOption('./Manual')
 		mainMenuOptionGroup.addOption('./Tools')
 		mainMenuOptionGroup.addOption('./Statistics')

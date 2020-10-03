@@ -7,16 +7,15 @@ module.exports = class Display extends component {
 		this.displayName = nome;
 		this.htmlComponent = document.createElement('div');
 
-		this.htmlComponent.addEventListener('showDisplay', (evt) => {
+		window.addEventListener('showDisplay', (evt) => {
+			
+			if (evt.detail === this.displayName) {
 
-			if (evt.detail.name == this.displayName) {
-
-				this.onLoad();
-				this.menuComponent.style.display = 'block';
+				this.htmlComponent.style.display = 'block';
 
 			} else {
 
-				this.menuComponent.style.display = 'none';
+				this.htmlComponent.style.display = 'none';
 			}
 
 		});
