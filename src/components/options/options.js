@@ -21,14 +21,20 @@ module.exports = class Options extends component {
 	}
 	build() {
 		let mainMenuOptionGroup = new OptionGroup();
+
 		mainMenuOptionGroup.addOption('./Communication',this.callMenuFunction("ok"))
 		mainMenuOptionGroup.addOption('./Packages',this.callMenuFunction('PackageDisplay'))
 		mainMenuOptionGroup.addOption('./Manual')
 		mainMenuOptionGroup.addOption('./Tools')
 		mainMenuOptionGroup.addOption('./Statistics')
 		mainMenuOptionGroup.addOption('./Settings')
+		
 		this.optionsGroups['MainMenu'] = mainMenuOptionGroup;
 
 		document.getElementById('menus').appendChild(mainMenuOptionGroup.htmlComponent)
+
+		window.addEventListener('changeCurrentOptionGroup', (evt) => {
+			this.setCurrentOptionGroup(evt.detail);
+		});
 	}
 };
