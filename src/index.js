@@ -25,7 +25,6 @@ let initialWindowparams = {
 };
 //parametros inicias da janela principal
 let mainWindowparams = {
-	title: 'ZenView',
 	path: '../src/index.html',
 	show: debugMode,
 	webPreferences: {
@@ -51,6 +50,8 @@ function createWindow(params) {
 	window.on('closed', () => {
 		window = null;
 	});
+	window.removeMenu();
+	window.setTitle("Zen");
 	return window;
 }
 //event listener que espera o app ser criado para criar as janelas
