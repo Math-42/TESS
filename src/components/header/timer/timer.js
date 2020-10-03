@@ -4,6 +4,10 @@ module.exports = class Header extends component {
 	constructor() {
 		super();
 		this.htmlComponent = document.createElement('div');
+		this.earthDiv = document.createElement('div');
+		this.marsDiv = document.createElement('div');
+		this.earthRotate = document.createElement('img');
+		this.marsRotate = document.createElement('img');
 		this.earthClock = document.createElement('div');
 		this.marsClock = document.createElement('div');
 		this.startedAt;
@@ -41,8 +45,21 @@ module.exports = class Header extends component {
 	build() {
 		this.startedAt = new Date();
 		this.htmlComponent.classList.add('glow');
-		this.htmlComponent.appendChild(this.marsClock)
-		this.htmlComponent.appendChild(this.earthClock)
+
+		this.earthRotate.src = "../images/EarthRotate.gif"
+		this.marsRotate.src = "../images/MarsRotate.gif"
+
+		this.earthDiv.classList.add('row');
+		this.marsDiv.classList.add('row')
+
+		this.earthDiv.appendChild(this.earthRotate)
+		this.earthDiv.appendChild(this.earthClock)
+
+		this.marsDiv.appendChild(this.marsRotate)
+		this.marsDiv.appendChild(this.marsClock)
+
+		this.htmlComponent.appendChild(this.earthDiv)
+		this.htmlComponent.appendChild(this.marsDiv)
 
 		window.addEventListener('setEarthTime', () => {
 			this.changeEarthTime();
