@@ -1,5 +1,5 @@
 # TESS : Telecom Engineering Space Simulator
-![TESS logo](https://github.com/Math-42/NasaSpaceApps/blob/main/PIXEL%20ART/TESS.png?raw=true)
+![TESS logo](https://github.com/Math-42/NasaSpaceApps/blob/master/assets/images/TESS.png)
 
 
 TESS is the immersive interactive experience that puts you in charge of an interplanetary (EARTH - MARS) communication system, a software designed to resemble the golden era of NASA and space exploration, nodding at MS-DOS interfaces of the late 20th century.
