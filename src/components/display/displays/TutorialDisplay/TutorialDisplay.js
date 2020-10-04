@@ -1,57 +1,58 @@
-const component = require('../component');
+const StandardDisplay = require('../../standardDisplay');
 
 
-module.exports = class Options extends component {
+module.exports = class TutorialDisplay extends StandardDisplay {
     constructor() {
-        super();
+        super("TutorialDisplay");
         this.timer = -1;
         this.flow = [{
                 time: 0,
                 role: "response",
                 text: "Hey! You are in NASA's Kennedy Space Center. You must be very excited about your first day here!"
             }, {
-                time: 2,
+                time: 1,
                 role: "response",
                 text: "You gonna work in our mission control room at the Space Flight Operations Facility."
             }, {
-                time: 4,
+                time: 2,
                 role: "response",
                 text: "Your main assignment is to maintain a effective telecom system to keep in touch with astronauts in Mars"
             }, {
-                time: 7,
+                time: 3,
                 role: "text",
                 text: "You mean: talk to them by phone or something?"
             }, {
-                time: 11,
+                time: 4,
                 role: "response",
                 text: "For now, phones are not a possibility. You will connect with them by our special communication system, Deep Space Network or DSN. "
             }, {
-                time: 14,
+                time: 5,
                 role: "response",
                 text: "DSN is NASA’s international array of giant radio antennas that supports interplanetary spacecraft missions."
             },
             {
-                time: 16,
+                time: 6,
                 role: "response",
                 text: "Introduzir o budget , a ideia de redes de comunicação e a comunicação com o astronauta "
             }, {
-                time: 18,
+                time: 7,
                 role: "text",
                 text: "Wow! But I do have that it takes to communicate with them?"
             }, {
-                time: 20,
+                time: 8,
                 role: "response",
                 text: "Trust me, you will receive very thing it needs in your NASA's Technical Manual."
             }, {
-                time: 22,
+                time: 9,
                 role: "text",
                 text: "Thanks! I'll do my best!"
             }
         ];
-        //! TALVEZ ISSO SEJA MELHOR EM OUTRO LUGAR
-        this.interval = setInterval(() => {
-            this.showTutorial();
-        }, 1000);
+        // // TALVEZ ISSO SEJA MELHOR EM OUTRO LUGAR
+        this.interval = {};
+
+        this.texts = document.createElement('div');
+        this.texts.className = "texts";
     }
 
 
@@ -72,26 +73,14 @@ module.exports = class Options extends component {
     add(text, role) {
         var dialogos = document.getElementsByClassName("texts");
         var texts = dialogos[0];
-
+        // console.log(this.texts);
         texts.appendChild(this.createText(text, role));
 
-    }
-    addResponse(text, t = 1) {
-        var dialogos = document.getElementsByClassName("texts");
-        var texts = dialogos[0];
-
-        texts.appendChild(this.createText(text, "response"));
-
-    }
-
-    addText(text) {
-        var texts = document.getElementsByClassName("texts")[0];
-        texts.appendChild(createText(text, "text"));
     }
 
     showTutorial() {
         this.timer++;
-        // console.log(this.timer);
+        console.log(this.timer);
         this.flow.forEach(
             (point) => {
                 if (this.timer == point.time) {
@@ -107,8 +96,7 @@ module.exports = class Options extends component {
 
     build() {
 
-        let divTexts = document.createElement('div');
-        divTexts.className = "texts";
+        console.log(this.texts);
 
         let divActors = document.createElement('div');
         divActors.className = "actors";
@@ -125,7 +113,8 @@ module.exports = class Options extends component {
 
         let divScreen = document.createElement('div');
         divScreen.className = "screen";
-        divScreen.appendChild(divTexts);
+        console.log(this.texts);
+        divScreen.appendChild(this.texts);
         divScreen.appendChild(divActors);
 
         let divPhone = document.createElement('div');
@@ -136,10 +125,19 @@ module.exports = class Options extends component {
         divTerminal.className = "terminal";
         divTerminal.appendChild(divPhone);
 
-        let display = document.getElementById("display");
-        display.appendChild(divTerminal);
+        this.htmlComponent.innerHTML = `<div class='terminal'> ${divTerminal.innerHTML} </div>`;
 
-
-
+        window.addEventListener('showDisplay', (event) => {
+            if (event.detail == "TutorialDisplay") {
+                this.interval = setInterval(() => {
+                    this.showTutorial();
+                }, 1000);
+            } else {
+                // clearInterval(this.interval);
+                var dialogos = document.getElementsByClassName("texts")[0];
+                this.timer = 0;
+                dialogos.innerHTML = "";
+            }
+        });
     }
 };

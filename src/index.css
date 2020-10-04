@@ -178,7 +178,7 @@ fieldset.package {
 
 img {
     width: 8%;
-    height: 8%;
+    /* height: 8%; */
 }
 
 textarea.package {
