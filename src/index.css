@@ -169,7 +169,7 @@ fieldset.package {
 	white-space: normal;
 }
 
-img {
+img.planeta {
 	width: 8%;
 	height: 8%;
 }
@@ -195,4 +195,9 @@ textarea.package {
 
 textarea:focus {
 	outline: none;
+}
+
+img.antenna{
+	width: 100%;
+	height: auto !important;
 }
