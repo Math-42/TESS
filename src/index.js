@@ -18,7 +18,7 @@ require('electron-reload')(__dirname);
 
 //parametros inicias da janela principal
 let mainWindowparams = {
-	title: "ZenView",
+	title: "Telecom Engineering Space Simulator",
 	path: '../src/index.html',
 	show: true,
 	webPreferences: {
