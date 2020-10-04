@@ -8,7 +8,7 @@ const url = require('url');
 const ipc = electron.ipcMain;
 const dialog = require('electron').dialog;
 
-const debugMode = true;
+const devMode = false;
 let initialWindow;
 let mainWindow;
 
@@ -20,12 +20,13 @@ require('electron-reload')(__dirname);
 let mainWindowparams = {
 	title: "ZenView",
 	path: '../src/index.html',
-	show: debugMode,
+	show: true,
 	webPreferences: {
 		nodeIntegration: true,
-		webviewTag: true
+		webviewTag: true,
+		devTools: devMode
 	},
-	openDevTools: debugMode
+	openDevTools: devMode
 };
 /**
  * cria uma nova janela a partir dos parametros dados
