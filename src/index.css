@@ -197,7 +197,48 @@ textarea:focus {
 	outline: none;
 }
 
-img.antenna{
+img.antenna {
 	width: 100%;
 	height: auto !important;
+}
+
+.btn-terminal {
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: none;
+	font-size: 1em;
+	font-family: inherit;
+	position: relative;
+	z-index: 1;
+	background: none;
+	border-color: #fff;
+	color: white;
+	box-shadow: none;
+	outline: none;
+}
+
+.btn-terminal:hover{
+	background-color: whitesmoke;
+	color: black;
+}
+
+.btn-terminal:active,
+.btn-terminal:focus { 
+	outline: none;
+}
+
+.progress{
+	background: none;
+	border-radius: 0px;
+	border-style: solid;
+	border-width: 1px;
+}
+.progress-bar{
+	border-radius: 0px;
+	background-color: white;
+}
+
+.stageChangesContainer{
+	justify-content: space-around;
+	align-items: center;
 }
