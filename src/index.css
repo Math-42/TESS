@@ -15,6 +15,7 @@ html {
 	-ms-user-select: none;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -42,6 +43,7 @@ html {
 	font-size: 1.6em !important;
 	height: 100%;
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 #mainContainer {
@@ -49,6 +51,7 @@ html {
 	margin: 0;
 	color: white;
 	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 
@@ -105,7 +108,9 @@ html {
 	background: none;
 	padding: 0px;
 	margin: 0px;
+	overflow-x: hidden;
 	overflow-y: auto;
+	height: 100%;
 }
 
 button.option {
