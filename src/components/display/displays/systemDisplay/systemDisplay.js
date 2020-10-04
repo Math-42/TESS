@@ -1,5 +1,4 @@
 const StandardDisplay = require('../../standardDisplay');
-const fs = require('fs');
 
 module.exports = class PackageDisplay extends StandardDisplay {
 	constructor() {
@@ -7,7 +6,7 @@ module.exports = class PackageDisplay extends StandardDisplay {
 	}
 	build() {
 		this.htmlComponent.innerHTML = `
-			<img src="../images/nadir.png" class="flags w-100" draggable="false">  
+			<img src="../assets/images/nadir.png" class="flags w-100" draggable="false">  
 
 			<br><br>
 			<h2 class="glow">Our first sufficiently stable operating system</h2>
