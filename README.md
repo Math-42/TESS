@@ -10,9 +10,15 @@ You are an engineer located on planeth Earth in charge of remotely solving probl
 This is a game with multiple endings based on your choices.
 
 ## Contributors
-Gabriel Garofa
-Leonardo Celente - @leocelente
-Maíra Canal - @mairacanal
-Matheus Vieira - @Math-42
-Jorge M Risco - 
-Vitor Favrin -
+
+> [Gabriel Garofa](https://github.com/Ggarofa)
+
+> [Leonardo Celente] (https://github.com/leocelente)
+
+> [Maíra Canal](https://github.com/mairacanal)
+
+> [Matheus Vieira}(https://github.com/Math-42)
+
+> [Jorge Marcelo del Llano Risco](https://github.com/jorgemrisco) 
+
+> [Vitor Favrin](https://github.com/VitorFCM)
