@@ -168,6 +168,16 @@ img {
 	max-height: 8%;
 }
 
+img.satellite {
+	max-width: 25%;
+	max-height: 25%;
+}
+
+img.flags {
+	max-width: 25%;
+	max-height: 25%;
+}
+
 textarea.package {
 	width: 100%;
 	color: white;
