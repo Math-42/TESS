@@ -8,6 +8,7 @@ module.exports = class Package{
 		this.dataContainer.classList.add('package');
 		this.dataContainer.classList.add('glow');
 		this.data = JSON.parse(fs.readFileSync(packagePath));
+		this.title = this.data.title;
 		this.build();
 	}
 	build(){
