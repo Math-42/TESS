@@ -8,3 +8,11 @@ Taking inspiration from *indie classics* such as *Papers, please* and *TIS-100* 
 ## Gameplay
 You are an engineer located on planeth Earth in charge of remotely solving problems happening on Mars through an **asynchronous** communication system: messages take a long time to travel, so **every byte counts**, there can be no **wasted messages**. You must use the Manual included in your software to find effective solutions for those problems: not only the mission success depends on you but there are human lives that depend on your choices.
 This is a game with multiple endings based on your choices.
+
+## Contributors
+Gabriel Garofa
+Leonardo Celente - @leocelente
+Maíra Canal - @mairacanal
+Matheus Vieira - @Math-42
+Jorge M Risco - 
+Vitor Favrin -
