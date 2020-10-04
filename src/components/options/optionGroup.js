@@ -16,7 +16,6 @@ module.exports = class OptionGroup extends component {
 
 	build() {
 		window.addEventListener('showOptionGroup', (evt) => {
-			console.log('asdasd');
 			if (evt.detail === this.optionGroupName) {
 
 				this.htmlComponent.style.display = 'block';
