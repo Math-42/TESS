@@ -31,8 +31,14 @@ module.exports =  class Display extends StandardDisplay{
                     <img src="../images/Australia.png" class="flags">  
                 </div>
                 <div class= "row">              
-                    <a href="#" class="previous">&#8249;</a>
-                    <a href="#" class="next">&#8250;</a>
+                    <button href="#" class="col btn btn-default btn-ghost glow option ">&#8249;</button>
+                    <button href="#" class="col btn btn-default btn-ghost glow option ">&#8250;</button>
+                    <button href="#" class="col btn btn-default btn-ghost glow option ">&#8249;</button>
+                    <button href="#" class="col btn btn-default btn-ghost glow option ">&#8250;</button>
+                    <button href="#" class="col btn btn-default btn-ghost glow option ">&#8249;</button>
+                    <button href="#" class="col btn btn-default btn-ghost glow option ">&#8250;</button>
+                    <button href="#" class="col btn btn-default btn-ghost glow option ">&#8249;</button>
+                    <button href="#" class="col btn btn-default btn-ghost glow option ">&#8250;</button>
                 </div>
 			</fieldset>
         `
