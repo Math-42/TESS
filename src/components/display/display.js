@@ -1,5 +1,5 @@
 const component = require('../component');
-const PackageDisplay = require('./displays/packageDisplay');
+const PackageDisplay = require('./displays/packageDisplay/packageDisplay');
 
 module.exports =  class Display extends component{
 	constructor(){
