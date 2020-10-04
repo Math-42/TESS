@@ -1,0 +1,23 @@
+{
+	"title" : "Package 1",
+	"package": {
+		"Message": "Missão importante para seu primeiro dia né? Já te explicaram sobre o manual, certo? Hoje iremos tomar um passo muito importante para a conquista do planeta vermelho, A perseverance irá chegar hoje e necessitamos realizar o agendamento dos pacotes que serão recebidos por cada antena",
+		"sondas": {
+			"InSight_Lander": {
+				"prioridade": "MÉDIA"
+			},
+			"Maren": {
+				"prioridade": "MÉDIA"
+			},
+			"Mars_Odyssey": {
+				"prioridade": "MÉDIA"
+			},
+			"Mars_2020": {
+				"prioridade": "ALTA"
+			},
+			"Mars_Reconnaissance_Orbiter": {
+				"prioridade": "MÉDIA"
+			}
+		}
+	}
+}
