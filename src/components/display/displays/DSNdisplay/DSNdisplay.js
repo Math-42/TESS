@@ -5,16 +5,21 @@ module.exports =  class Display extends StandardDisplay{
 		super('DSNdisplay');
 		//this.build();
     }
+
     activatedSatellite(){
         this.activeSatellite = document.createElement('img')
+        this.activeSatellite.draggable = false;
+        this.activeSatellite.classList.add('col-3')
         this.activeSatellite.src = "../images/Satellite.gif"
-        this.activeSatellite.classList.add("satellite")
+        this.activeSatellite.classList.add("Satellite")
         document.getElementById('satelliteRow').appendChild(this.activeSatellite)
     }
     deactivatedSatellite(){
         this.deactiveSatellite = document.createElement('img')
+        this.deactiveSatellite.draggable = false;
+        this.deactiveSatellite.classList.add('col-3')
         this.deactiveSatellite.src = "../images/Satellite.png"
-        this.deactiveSatellite.classList.add("satellite")
+        this.deactiveSatellite.classList.add("Satellite")
         document.getElementById('satelliteRow').appendChild(this.deactiveSatellite)
     }
 	build(){
@@ -25,10 +30,10 @@ module.exports =  class Display extends StandardDisplay{
                     
                 </div>
                 <div class= "row">              
-                    <img src="../images/Spain.png" class="flags">            
-                    <img src="../images/Spain.png" class="flags">  
-                    <img src="../images/USA.png" class="flags">  
-                    <img src="../images/Australia.png" class="flags">  
+                    <img src="../images/Spain.png" class="flags col-3" draggable="false">            
+                    <img src="../images/Spain.png" class="flags col-3" draggable="false">  
+                    <img src="../images/USA.png" class="flags col-3" draggable="false">  
+                    <img src="../images/Australia.png" class="flags col-3" draggable="false">  
                 </div>
                 <div class= "row">              
                     <button href="#" class="col btn btn-default btn-ghost glow option ">&#8249;</button>
