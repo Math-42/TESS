@@ -25,7 +25,7 @@ module.exports = class Options extends component {
 		mainMenuOptionGroup.addOption('./Packages',this.callMenuFunction('PackageDisplay'))
 		mainMenuOptionGroup.addOption('./Communication',this.callMenuFunction(''))
 		mainMenuOptionGroup.addOption('./Manual')
-		mainMenuOptionGroup.addOption('./Tools')
+		mainMenuOptionGroup.addOption('./Tools', this.callMenuFunction('DSNdisplay'))
 		mainMenuOptionGroup.addOption('./Statistics')
 		mainMenuOptionGroup.addOption('./Settings')
 

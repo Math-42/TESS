@@ -1,9 +1,9 @@
-const StandardDisplay = require('../standardDisplay');
+const StandardDisplay = require('../../standardDisplay');
 
 module.exports =  class Display extends StandardDisplay{
 	constructor(){
-		super();
-		this.build();
+		super('DSNdisplay');
+		//this.build();
     }
     activatedSatellite(){
         this.activeSatellite = document.createElement('img')
