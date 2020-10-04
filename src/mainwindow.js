@@ -3,49 +3,56 @@ const Display = require('./components/display/display');
 const Footer = require('./components/footer/footer');
 const Header = require('./components/header/header');
 const Window = require('./components/window/window');
+const StartMenu = require('./components/startmenu/startmenu')
+const Dialogos = require('./components/dialogo/dialogo')
+
 
 const fs = require('fs');
 const component = require('./components/component');
 const ipc = require('electron').ipcRenderer;
 
-class MainWindow extends component{
+class MainWindow extends component {
 
-	constructor() {
-		super();
-		this.header = new Header();
-		this.options = new Options();
-		this.window = new Window();
-		this.display = new Display();
-		this.footer = new Footer();
-		this.htmlComponent = document.createElement('div');
-	}
+    constructor() {
+        super();
+        this.header = new Header();
+        this.options = new Options();
+        this.window = new Window();
+        this.display = new Display();
+        this.startmenu = new StartMenu();
+        this.dialogos = new Dialogos();
+        this.footer = new Footer();
+        this.htmlComponent = document.createElement('div');
+    }
 
-	build() {
+    build() {
 
-		let duracao = Date.now();
+        let duracao = Date.now();
 
-		this.init();
-		this.options.build();
-		this.display.build();
-		this.footer.build();
-		this.header.build();
+        this.init();
+        this.options.build();
+        this.display.build();
+        // this.startmenu.build();
+        this.dialogos.build();
+        this.footer.build();
+        this.header.build();
 
-		document.getElementById('mainContainer').appendChild(this.htmlComponent);
+        document.getElementById('mainContainer').appendChild(this.htmlComponent);
 
-		setTimeout(() => { 
+        setTimeout(() => {
 
-			ipc.send('mainLoadCompleto', {
-				show: true,
-			});
+            ipc.send('mainLoadCompleto', {
+                show: true,
+            });
 
-		}, duracao);
+        }, duracao);
 
-	}
+    }
 }
 
 window.onload = () => {
 
-	const App = new MainWindow();
-	App.build();
+    const App = new MainWindow();
+    App.build();
 
 };
