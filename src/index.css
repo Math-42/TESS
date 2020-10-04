@@ -197,6 +197,11 @@ textarea:focus {
 	outline: none;
 }
 
+img.TESS{
+	height: 50%;
+	width: 50%;
+}
+
 img.antenna{
 	width: 100%;
 	height: auto !important;
