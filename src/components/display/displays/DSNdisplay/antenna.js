@@ -1,5 +1,5 @@
 module.exports = class Antenna {
-	constructor(flagName, nmbrOfInputs) {
+	constructor(flagName, nmbrOfInputs, id) {
 
 		this.htmlComponent = document.createElement('div');
 		this.htmlComponent.classList.add('col-3');
@@ -17,6 +17,8 @@ module.exports = class Antenna {
 		this._active;
 
 		this.nmbrOfInputs = nmbrOfInputs;
+
+		this.id = id;
 
 		this.spacecraftList = ["InSight Lander", "Maren", "Mars Odyssey", "Mars 2020", "MRO"]
 
@@ -54,17 +56,18 @@ module.exports = class Antenna {
 
 			option = document.createElement('button')
 			option.classList = 'col-6  btn-ghost glow option DSNoption'
+			option.id = this.id + '_' + i;
 			option.textContent = this.spacecraftList[i]
 
 			nextArrow.onclick = () => {
 				let i = this.spacecraftList.indexOf(option.textContent);
-				i = Math.abs((i+1)%(this.spacecraftList.length))
+				i = Math.abs((i + 1) % (this.spacecraftList.length))
 				option.textContent = this.spacecraftList[i];
 			}
 
 			backArrow.onclick = () => {
 				let i = this.spacecraftList.indexOf(option.textContent);
-				i = ((i-1 == -1) ? this.spacecraftList.length-1 : i-1);
+				i = ((i - 1 == -1) ? this.spacecraftList.length - 1 : i - 1);
 				option.textContent = this.spacecraftList[i];
 			}
 

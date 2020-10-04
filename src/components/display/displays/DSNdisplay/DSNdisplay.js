@@ -26,10 +26,10 @@ module.exports = class Display extends StandardDisplay {
 
         this.htmlComponent.appendChild(this.htmlContainer);
 
-        this.Antenna1 = new Antenna('Spain', 3);
-        this.Antenna2 = new Antenna('Spain', 1);
-        this.Antenna3 = new Antenna('USA', 1);
-        this.Antenna4 = new Antenna('Australia', 1);
+        this.Antenna1 = new Antenna('Spain', 3,1);
+        this.Antenna2 = new Antenna('Spain', 1,2);
+        this.Antenna3 = new Antenna('USA', 1,2);
+        this.Antenna4 = new Antenna('Australia', 1,4);
     }
 
     loadProgress() {
