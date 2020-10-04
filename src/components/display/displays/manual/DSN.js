@@ -19,9 +19,9 @@ module.exports =  class Display extends StandardDisplay{
             <fieldset class="package">
             <legend class="packageTitle">Where is it?</legend>	
                 <div class="row">
-                    <img src="../assets/images/Spain.png" class="col antenna"></img>
-                    <img src="../assets/images/USA.png" class="col antenna"></img>
-                    <img src="../assets/images/Australia.png" class="col antenna"></img>
+                    <img src="../assets/images/Spain.png" class="col-4 antenna"></img>
+                    <img src="../assets/images/USA.png" class="col-4 antenna"></img>
+                    <img src="../assets/images/Australia.png" class="col-4 antenna"></img>
                 </div>
                 <span class="glow">&nbsp;&nbsp;We operate DSN on NASA's Jet Propulsion Laboratory (JPL). Our antennas are equipped with at least 4 huge antennas in Goldstone (California), Madrid (Spain) and Canberra (Australia).</span>
             </fieldset>

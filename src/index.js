@@ -73,6 +73,7 @@ ipc.on('mainLoadCompleto', () => {
 	setTimeout(() => {
 		mainWindow.title = 'Telecom Engineering Space Simulator'
 		mainWindow.show();
+		mainWindow.setFullScreen(true);
 	}, 250);
 });
 
