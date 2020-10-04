@@ -16,6 +16,12 @@ module.exports = class Header extends component {
 		this.marsClock = document.createElement('div');
 		this.startedAt;
 		this.build();
+
+		this.marsHour = {
+			h:0,
+			m:0,
+			n:0
+		}
 	}
 	changeEarthTime() {
 		let horario = new Date();
@@ -27,18 +33,41 @@ module.exports = class Header extends component {
 		s = (parseInt(s) < 10) ? '0' + s : s;
 		this.earthClock.textContent = h + ":" + m + ":" + s;
 	}
+	
 	changeMarsTime() {
 		let horario = new Date();
-		let h = horario.getHours();
-		let m = horario.getMinutes();
-		let s = horario.getSeconds();
-		h = (parseInt(h) < 10) ? '0' + h : h;
-		m = (parseInt(m) < 10) ? '0' + m : m;
-		s = (parseInt(s) < 10) ? '0' + s : s;
+
+		if(this.marsClock.s < 60){
+			this.marsClock.s ++;
+		}else{
+			this.marsClock.s = 0;
+			this.marsClock.m ++;
+		}
+
+		if(this.marsClock.m >= 60){
+			this.marsClock.m = 0;
+			this.marsClock.h ++;
+		}
+
+		if(this.marsClock.h >= 24){
+			this.marsClock.h = 0;
+		}
+
+		let h = (parseInt(this.marsClock.h) < 10) ? '0' + this.marsClock.h : this.marsClock.h;
+		let m = (parseInt(this.marsClock.m) < 10) ? '0' + this.marsClock.m : this.marsClock.m;
+		let s = (parseInt(this.marsClock.s) < 10) ? '0' + this.marsClock.s : this.marsClock.s;
+
 		this.marsClock.textContent = h + ":" + m + ":" + s;
 
 	}
+
 	startTime() {
+		let horario = new Date();
+
+		this.marsClock.h = horario.getHours();
+		this.marsClock.m = horario.getMinutes();
+		this.marsClock.s = horario.getSeconds();
+
 		setTimeout(() => {
 			window.dispatchEvent(new CustomEvent('setEarthTime'))
 		}, 1);
@@ -81,7 +110,7 @@ module.exports = class Header extends component {
 			this.changeMarsTime();
 			setTimeout(() => {
 				window.dispatchEvent(new CustomEvent('setMarsTime'))
-			}, 1433);
+			}, 1027);
 		});
 
 	}
