@@ -8,7 +8,7 @@ module.exports = class MainMenu extends component{
 		this.exitOpt = document.createElement('button');
 	}
 	newGame(){
-		document.getElementById("mainContainer").style.display = 'flex'
+		document.getElementById("tutorial").style.display = 'block'
 		document.getElementById("mainMenu").style.display = 'none'
 	}
 	continueGame(){
@@ -16,6 +16,8 @@ module.exports = class MainMenu extends component{
 		document.getElementById("mainMenu").style.display = 'none'
 	}
 	build(){
+		document.getElementById("tutorial").style.display = 'none'
+
 		this.newGameOpt.textContent = './New_Game.exe'
 		this.continueGameOpt.textContent = './Continue.exe'
 		this.exitOpt.textContent = 'Exit()'

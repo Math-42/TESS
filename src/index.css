@@ -68,6 +68,13 @@ html {
 	pointer-events: none;
 }
 
+#tutorial{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+
 #display {
     font-size: 1.6em !important;
     height: 100%;
@@ -216,9 +223,9 @@ img.planeta {
     height: 8%;
 }
 
-img {
-    width: 128px;
-    height: 128px;
+img.actor , img.char{
+    width: 30% !important;
+    height: auto;
 }
 
 textarea.package {
