@@ -29,7 +29,7 @@ class MainWindow extends component{
 		this.display.build();
 		this.footer.build();
 		this.header.build();
-		
+		GlobalMecanics.sendPackage('package_2',8000);
 		document.getElementById('mainContainer').appendChild(this.htmlComponent);
 
 		setTimeout(() => { 
