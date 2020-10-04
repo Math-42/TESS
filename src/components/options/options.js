@@ -75,7 +75,7 @@ module.exports = class Options extends component {
 
         this.mainMenuOptionGroup.addOption('/Readme.md', this.callMenuFunction('SystemDisplay'))
             // !
-        this.mainMenuOptionGroup.addOption('/Tutorial.txt', this.callMenuFunction('TutorialDisplay'))
+        this.mainMenuOptionGroup.addOption('/Intro.gif', this.callMenuFunction('TutorialDisplay'))
 
         this.mainMenuOptionGroup.addOption('/Packages', this.callOptionGroupFunction('packageOptionGroup'))
         this.mainMenuOptionGroup.addOption('/Communication', this.callOptionGroupFunction('toolsOptionGroup'))

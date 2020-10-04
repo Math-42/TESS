@@ -11,7 +11,7 @@ module.exports = class Display extends component {
         this.packageDisplay = new PackageDisplay();
         this.DSNDisplay = new DSNDisplay();
         this.SystemDisplay = new SystemDisplay();
-        this.TutorialDisplay = new TutorialDisplay()
+        this.TutorialDisplay = new TutorialDisplay();
         this.displayGroup = {};
     }
     addDisplay(display) {
