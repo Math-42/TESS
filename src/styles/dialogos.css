@@ -1,0 +1,200 @@
+.terminal {
+    width: 100%;
+}
+
+.actors .actor {
+    width: 128px;
+}
+
+.actors .char img {
+    width: 128px;
+}
+
+.phone {
+    position: absolute;
+    width: 100%;
+    height: 99%;
+}
+
+.phone .screen {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    /* margin: 0; */
+    width: 100%;
+    height: 99%;
+    /* border-radius: 5px; */
+}
+
+.actors {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.phone .screen .texts {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    padding: 1em;
+    width: 100%;
+    height: 99%;
+    background-color: transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.phone .screen .texts .text {
+    visibility: visible;
+    opacity: 1;
+    align-self: flex-start;
+    margin: 0.5em;
+    padding: 0.5em;
+    max-width: 80%;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px 1px #fff;
+    color: #000;
+    -webkit-animation: text-bubble 10s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+    animation: text-bubble 10s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+}
+
+.phone .screen .texts .response {
+    visibility: visible;
+    opacity: 1;
+    align-self: flex-end;
+    margin: 0.5em;
+    padding: 0.5em;
+    max-width: 80%;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px 1px #fff;
+    color: #000;
+    -webkit-animation: text-bubble 10s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+    animation: text-bubble 10s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+}
+
+@-webkit-keyframes text-bubble {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0px;
+        margin: 0;
+        padding: 0;
+        -webkit-transform: scale(0.6);
+        transform: scale(0.6);
+    }
+    9% {
+        padding: 5px;
+        margin: 3px;
+        visibility: visible;
+    }
+    10% {
+        opacity: 1;
+        max-height: 170px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        max-height: 170px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes text-bubble {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0px;
+        margin: 0;
+        padding: 0;
+        -webkit-transform: scale(0.6);
+        transform: scale(0.6);
+    }
+    9% {
+        padding: 5px;
+        margin: 3px;
+        visibility: visible;
+    }
+    10% {
+        opacity: 1;
+        max-height: 170px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        max-height: 170px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes new-notification {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -10px);
+        transform: translate(-50%, -10px);
+    }
+    5% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, 3px);
+        transform: translate(-50%, 3px);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, 3px);
+        transform: translate(-50%, 3px);
+    }
+    55% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -10px);
+        transform: translate(-50%, -10px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -10px);
+        transform: translate(-50%, -10px);
+    }
+}
+
+@keyframes new-notification {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -10px);
+        transform: translate(-50%, -10px);
+    }
+    5% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, 3px);
+        transform: translate(-50%, 3px);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, 3px);
+        transform: translate(-50%, 3px);
+    }
+    55% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -10px);
+        transform: translate(-50%, -10px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -10px);
+        transform: translate(-50%, -10px);
+    }
+}

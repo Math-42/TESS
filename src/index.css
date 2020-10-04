@@ -1,5 +1,6 @@
 body,
 html {
+
 	box-sizing: border-box;
 	color: white;
 	height: 100%;
@@ -19,27 +20,27 @@ html {
 }
 
 ::-webkit-scrollbar {
-	width: 0.15em;
+    width: 0.15em;
 }
 
 ::-webkit-scrollbar-track {
-	background: rgba(241, 241, 241, 0.308);
+    background: rgba(241, 241, 241, 0.308);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #888;
+    background: #888;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
-
+    background: #555;
 }
 
 .glow {
-	text-shadow: 0 0 10px #ffffff69;
+    text-shadow: 0 0 10px #ffffff69;
 }
 
 #display {
+
 	font-size: 1.6em !important;
 	height: 100%;
 	overflow-y: scroll;
@@ -54,19 +55,15 @@ html {
 	overflow-x: hidden;
 }
 
-
 @keyframes textShadow {
-	0% {
-		text-shadow: 0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
-	}
-
-	5% {
-		text-shadow: 2.7928974010788217px 0 1px rgba(0, 30, 255, 0.5), -2.7928974010788217px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
-	}
-
-	/** etc */
+    0% {
+        text-shadow: 0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+    5% {
+        text-shadow: 2.7928974010788217px 0 1px rgba(0, 30, 255, 0.5), -2.7928974010788217px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+    /** etc */
 }
-
 
 #mainContainer:before {
 	content: " ";
@@ -84,25 +81,25 @@ html {
 	pointer-events: none;
 }
 
-
 #headers {
-	justify-content: space-between;
-	flex: 0.1;
-	font-size: 2.3em;
-	align-items: flex-end;
+    justify-content: space-between;
+    flex: 0.1;
+    font-size: 2.3em;
+    align-items: flex-end;
 }
 
 #mainContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 100%;
-	padding-left: 2em !important;
-	padding-right: 2em !important;
-	width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+    width: 100%;
 }
 
 #menus {
+
 	flex: 1;
 	border-right: 0.1em solid whitesmoke;
 	background: none;
@@ -114,71 +111,86 @@ html {
 }
 
 button.option {
-	font-size: 2.1em;
-	color: white;
-	width: 100%;
-	box-shadow: none;
-	outline: none;
-	border: none;
-	background: none;
+    font-size: 2.1em;
+    color: white;
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background: none;
 }
 
 button.DSNoption {
-	font-size: 0.8em;
-	color: white !important;
-	white-space: nowrap;
-	vertical-align: bottom;
+    font-size: 0.8em;
+    color: white !important;
+    white-space: nowrap;
+    vertical-align: bottom;
 }
 
 button.option:hover {
-	background-color: rgba(245, 245, 245, 0.281);
+    background-color: rgba(245, 245, 245, 0.281);
 }
 
 #mainWidget {
-	flex: 0.8;
-	border: 0.1em solid whitesmoke;
-	overflow-y: hidden;
+    flex: 0.8;
+    border: 0.1em solid whitesmoke;
+    overflow-y: hidden;
 }
 
 #footers {
-	font-size: 2.3em;
-	flex: 0.05;
-	justify-content: space-between;
+    font-size: 2.3em;
+    flex: 0.05;
+    justify-content: space-between;
+}
+
+#start-menu {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 0.5em;
+    margin: 10em auto auto auto;
+    width: 20%;
+    border: 0.05em dashed white;
+}
+
+#start-menu button {
+    max-width: 90%;
+    margin: .2em auto;
 }
 
 fieldset.package {
-	text-rendering: geometricPrecision;
-	display: block;
-	margin-inline-end: 2px;
-	padding-block-start: 0.35em;
-	padding-inline-start: 0.75em;
-	padding-inline-end: 0.75em;
-	padding-block-end: 0.625em;
-	min-inline-size: min-content;
-	border-width: 2px;
-	border-style: groove;
-	border-color: threedface;
-	border-image: initial;
-	border: 0.1em dashed white;
+    text-rendering: geometricPrecision;
+    display: block;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+    border: 0.1em dashed white;
 }
 
 .packageTitle {
-	box-sizing: border-box;
-	font-size: 1.6em !important;
-	color: inherit;
-	font-family: 'VT323', monospace !important;
-	display: table;
-	padding-left: 0.2em;
-	padding-right: 0.2em;
-	width: auto;
-	white-space: normal;
+    box-sizing: border-box;
+    font-size: 1.6em !important;
+    color: inherit;
+    font-family: 'VT323', monospace !important;
+    display: table;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    width: auto;
+    white-space: normal;
 }
+
 
 img.planeta {
 	width: 1.3em;
 	height: 8%;
 }
-
 
 textarea.package {
 	width: 100%;
