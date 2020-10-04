@@ -1,8 +1,8 @@
 {
-	"title": "Package 1",
+	"title": "Package_1",
 	"package": {
 		"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
-		"sondas": {
+		"Spacecrafts": {
 			"InSight_Lander": {
 				"priority": "MEDIUM",
 				"frequency": 7.18
