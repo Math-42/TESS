@@ -64,6 +64,11 @@ module.exports = class Options extends component {
 
 		this.packageOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
 		this.packageOptionGroup.addOption('./Package1.bag', this.openPackageFunction('Package_1'))
+
+		window.addEventListener('addNewPackage', (evt) => {
+			let data = JSON.parse(fs.readFileSync('./src/packages/' + evt.detail));
+			this.packageOptionGroup.addOption('./' + data.title + '.bag' , this.openPackageFunction('Package_1'))
+		});
 	}
 
 	mainMenuOptionGroupOpt() {
