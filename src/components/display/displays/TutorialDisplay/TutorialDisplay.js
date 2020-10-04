@@ -4,50 +4,57 @@ const StandardDisplay = require('../../standardDisplay');
 module.exports = class TutorialDisplay extends StandardDisplay {
     constructor() {
         super("TutorialDisplay");
-        this.timer = -1;
+        this.timestep = 2200;
+        this.timer = 0;
         this.flow = [{
-                time: 0,
-                role: "response",
-                text: "Hey! You are in NASA's Kennedy Space Center. You must be very excited about your first day here!"
-            }, {
-                time: 1,
-                role: "response",
-                text: "You gonna work in our mission control room at the Space Flight Operations Facility."
-            }, {
-                time: 2,
-                role: "response",
-                text: "Your main assignment is to maintain a effective telecom system to keep in touch with astronauts in Mars"
-            }, {
-                time: 3,
-                role: "text",
-                text: "You mean: talk to them by phone or something?"
-            }, {
-                time: 4,
-                role: "response",
-                text: "For now, phones are not a possibility. You will connect with them by our special communication system, Deep Space Network or DSN. "
-            }, {
-                time: 5,
-                role: "response",
-                text: "DSN is NASA’s international array of giant radio antennas that supports interplanetary spacecraft missions."
-            },
-            {
-                time: 6,
-                role: "response",
-                text: "Introduzir o budget , a ideia de redes de comunicação e a comunicação com o astronauta "
-            }, {
-                time: 7,
-                role: "text",
-                text: "Wow! But I do have that it takes to communicate with them?"
-            }, {
-                time: 8,
-                role: "response",
-                text: "Trust me, you will receive very thing it needs in your NASA's Technical Manual."
-            }, {
-                time: 9,
-                role: "text",
-                text: "Thanks! I'll do my best!"
-            }
-        ];
+            time: 0,
+            role: "response",
+            text: "Hey! You are in NASA's Kennedy Space Center. You must be very excited about your first day here!"
+        }, {
+            time: 2,
+            role: "response",
+            text: "You're gonna work on our Mission Control Room at the Space Flight Operations Facility."
+        }, {
+            time: 4,
+            role: "response",
+            text: "Your main assignment is to maintain a effective telecom system to keep in touch with astronauts in Mars"
+        }, {
+            time: 7,
+            role: "text",
+            text: "You mean, talk to them on phone?"
+        }, {
+            time: 8,
+            role: "response",
+            text: "Ha!, You wish! You'll connect with them using our special communication system"
+        }, {
+            time: 10,
+            role: "response",
+            text: "The Deep Space Network"
+        }, {
+            time: 12,
+            role: "response",
+            text: "The DSN is NASA’s international array of giant radio antennas that supports interplanetary spacecraft missions."
+        }, {
+            time: 15,
+            role: "response",
+            text: "You are going to have to design and operate the link that keeps people together over interplanetary distances"
+        }, {
+            time: 17,
+            role: "response",
+            text: "You'll face some challenges setting up a fast and reliable connection with them"
+        }, {
+            time: 19,
+            role: "text",
+            text: "Wow! But I do have that it takes to communicate with them?"
+        }, {
+            time: 20,
+            role: "response",
+            text: "Trust me, you can do this. If you don't know something you can always check our Technical Manual"
+        }, {
+            time: 23,
+            role: "text",
+            text: "OK! I'll do my best!"
+        }];
         // // TALVEZ ISSO SEJA MELHOR EM OUTRO LUGAR
         this.interval = {};
 
@@ -79,7 +86,6 @@ module.exports = class TutorialDisplay extends StandardDisplay {
     }
 
     showTutorial() {
-        this.timer++;
         console.log(this.timer);
         this.flow.forEach(
             (point) => {
@@ -91,6 +97,8 @@ module.exports = class TutorialDisplay extends StandardDisplay {
                 }
             }
         );
+        this.timer++;
+
     }
 
 
@@ -129,11 +137,13 @@ module.exports = class TutorialDisplay extends StandardDisplay {
 
         window.addEventListener('showDisplay', (event) => {
             if (event.detail == "TutorialDisplay") {
+                console.log(this.timestep);
+                this.showTutorial();
+                console.log("dasda");
                 this.interval = setInterval(() => {
                     this.showTutorial();
-                }, 1000);
+                }, this.timestep);
             } else {
-                // clearInterval(this.interval);
                 var dialogos = document.getElementsByClassName("texts")[0];
                 this.timer = 0;
                 dialogos.innerHTML = "";
