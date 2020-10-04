@@ -168,7 +168,6 @@ img {
 	max-height: 8%;
 }
 
-<<<<<<< HEAD
 img.satellite {
 	max-width: 25%;
 	max-height: 25%;
@@ -177,7 +176,8 @@ img.satellite {
 img.flags {
 	max-width: 25%;
 	max-height: 25%;
-=======
+}
+
 textarea.package {
 	width: 100%;
 	color: white;
@@ -198,5 +198,4 @@ textarea.package {
 
 textarea:focus {
 	outline: none;
->>>>>>> fcbb491657a25d56557a281e0e1c9118efefb9c4
 }
