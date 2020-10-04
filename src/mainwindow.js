@@ -4,6 +4,7 @@ const Footer = require('./components/footer/footer');
 const Header = require('./components/header/header');
 const Window = require('./components/window/window');
 const GlobalMecanics = require('./components/globalMecanics/globalMecanics');
+const MainMenu = require('./components/mainMenu/mainMenu');
 
 const component = require('./components/component');
 const ipc = require('electron').ipcRenderer;
@@ -17,6 +18,7 @@ class MainWindow extends component{
 		this.window = new Window();
 		this.display = new Display();
 		this.footer = new Footer();
+		this.MainMenu = new MainMenu();
 		this.htmlComponent = document.createElement('div');
 	}
 
@@ -29,8 +31,10 @@ class MainWindow extends component{
 		this.display.build();
 		this.footer.build();
 		this.header.build();
+		this.MainMenu.build();
 		
 		document.getElementById('mainContainer').appendChild(this.htmlComponent);
+		document.getElementById("mainContainer").style.display = 'none'
 
 		setTimeout(() => { 
 
