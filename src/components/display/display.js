@@ -23,11 +23,8 @@ module.exports = class Display extends component {
 	build() {
 		document.getElementById('display').appendChild(this.htmlComponent);
 		this.addDisplay(this.packageDisplay);
-<<<<<<< HEAD
-		this.setCurrentDisplay('PackageDisplay')
-=======
 		this.addDisplay(this.DSNDisplay);
->>>>>>> a975af204e87016ac8ce7873aaac7097307745c7
+		this.setCurrentDisplay('PackageDisplay')
 
 		window.addEventListener('setCurrentDisplay', (evt) => {
 
