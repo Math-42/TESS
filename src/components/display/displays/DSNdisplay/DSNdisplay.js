@@ -5,7 +5,8 @@ module.exports =  class Display extends StandardDisplay{
 		super('DSNdisplay');
 		//this.build();
     }
-    createButton(){
+    createButtons(){
+        let i = 0;
         let spacecraftList = ["InSight Lander", "Maren", "Mars Odyssey", "Mars 2020", "Mars Reconnaissance Orbiter"]
 
         this.nextArrow = document.createElement('button')
@@ -18,12 +19,30 @@ module.exports =  class Display extends StandardDisplay{
 
         this.option = document.createElement('button')
         this.option.classList = 'col btn btn-default btn-ghost glow option DSNoption'
-        this.option.textContent = spacecraftList[0]
+        this.option.textContent = spacecraftList[i]
 
         document.getElementById('DSNrow').appendChild(this.backArrow)
         document.getElementById('DSNrow').appendChild(this.option)
         document.getElementById('DSNrow').appendChild(this.nextArrow)
         
+        this.nextArrow.addEventListener("click", () => {
+            if (i >= 4){
+                i = 0;
+            } else {
+                i++;
+            }
+            this.option.textContent = spacecraftList[i];
+        });
+
+        this.backArrow.addEventListener("click", () => {
+            if (i <= 0){
+                i = 4;
+            } else {
+                i--;
+            }
+            this.option.textContent = spacecraftList[i];
+        }
+        );
     }
     activatedSatellite(){
         this.activeSatellite = document.createElement('img')
@@ -70,9 +89,9 @@ module.exports =  class Display extends StandardDisplay{
         this.activatedSatellite();
         this.deactivatedSatellite();
 
-        this.createButton();
-        this.createButton();
-        this.createButton();
-        this.createButton();
+        this.createButtons();
+        this.createButtons();
+        this.createButtons();
+        this.createButtons();
 	}
 }
