@@ -68,6 +68,8 @@ module.exports = class Header extends component {
 		this.htmlComponent.appendChild(this.earthDiv)
 		this.htmlComponent.appendChild(this.marsDiv)
 
+		this.htmlComponent.classList.add('col')
+
 		window.addEventListener('setEarthTime', () => {
 			this.changeEarthTime();
 			setTimeout(() => {
