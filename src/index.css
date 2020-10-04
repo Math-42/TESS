@@ -10,10 +10,15 @@ html {
     font-size: 1.1em;
     font-weight: bold;
     overflow-y: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-    width: 0.3em;
+    width: 0.15em;
 }
 
 ::-webkit-scrollbar-track {
@@ -105,6 +110,13 @@ button.option {
     background: none;
 }
 
+button.DSNoption {
+    font-size: 0.8em;
+    color: white !important;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+
 button.option:hover {
     background-color: rgba(245, 245, 245, 0.281);
 }
@@ -121,7 +133,22 @@ button.option:hover {
     justify-content: space-between;
 }
 
-.package {
+#start-menu {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 0.5em;
+    margin: 10em auto auto auto;
+    width: 20%;
+    border: 0.05em dashed white;
+}
+
+#start-menu button {
+    max-width: 90%;
+    margin: .2em auto;
+}
+
+fieldset.package {
     text-rendering: geometricPrecision;
     display: block;
     margin-inline-end: 2px;
@@ -149,17 +176,29 @@ button.option:hover {
     white-space: normal;
 }
 
-#start-menu {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    padding: 0.5em;
-    margin: 10em auto auto auto;
-    width: 20%;
-    border: 0.05em dashed white;
+img {
+    width: 8%;
+    height: 8%;
 }
 
-#start-menu button {
-    max-width: 90%;
-    margin: .2em auto;
+textarea.package {
+    width: 100%;
+    color: white;
+    min-height: 30rem;
+    font-family: 'VT323', monospace !important;
+    font-size: 1.2rem;
+    background: none;
+    line-height: 1.2;
+    border: none;
+    cursor: default;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+}
+
+textarea:focus {
+    outline: none;
 }

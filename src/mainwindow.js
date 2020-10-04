@@ -6,8 +6,8 @@ const Window = require('./components/window/window');
 const StartMenu = require('./components/startmenu/startmenu')
 const Dialogos = require('./components/dialogo/dialogo')
 
+const GlobalMecanics = require('./components/globalMecanics/globalMecanics');
 
-const fs = require('fs');
 const component = require('./components/component');
 const ipc = require('electron').ipcRenderer;
 
@@ -37,6 +37,7 @@ class MainWindow extends component {
         this.footer.build();
         this.header.build();
 
+        GlobalMecanics.sendPackage('package_2', 8000);
         document.getElementById('mainContainer').appendChild(this.htmlComponent);
 
         setTimeout(() => {

@@ -1,0 +1,86 @@
+{
+	"package_1": {
+		"title": "package_1",
+		"package": {
+			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
+			"Spacecrafts": {
+				"InSight_Lander": {
+					"priority": "MEDIUM",
+					"frequency": 7.18
+				},
+				"Maren": {
+					"priority": "MEDIUM",
+					"frequency": 7.18
+				},
+				"Mars_Odyssey": {
+					"priority": "MEDIUM",
+					"frequency": 7.48
+				},
+				"Mars_2020": {
+					"priority": "HIGH",
+					"frequency": 7.48
+				},
+				"Mars_Reconnaissance_Orbiter": {
+					"priority": "MEDIUM",
+					"frequency": 7.82
+				}
+			}
+		}
+	},
+	"package_2": {
+		"title": "package_2",
+		"package": {
+			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
+			"Spacecrafts": {
+				"InSight_Lander": {
+					"priority": "MEDIUM",
+					"frequency": 7.18
+				},
+				"Maren": {
+					"priority": "MEDIUM",
+					"frequency": 7.18
+				},
+				"Mars_Odyssey": {
+					"priority": "MEDIUM",
+					"frequency": 7.48
+				},
+				"Mars_2020": {
+					"priority": "HIGH",
+					"frequency": 7.48
+				},
+				"Mars_Reconnaissance_Orbiter": {
+					"priority": "MEDIUM",
+					"frequency": 7.82
+				}
+			}
+		}
+	},
+	"package_3": {
+		"title": "package_3",
+		"package": {
+			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
+			"Spacecrafts": {
+				"InSight_Lander": {
+					"priority": "MEDIUM",
+					"frequency": 7.18
+				},
+				"Maren": {
+					"priority": "MEDIUM",
+					"frequency": 7.18
+				},
+				"Mars_Odyssey": {
+					"priority": "MEDIUM",
+					"frequency": 7.48
+				},
+				"Mars_2020": {
+					"priority": "HIGH",
+					"frequency": 7.48
+				},
+				"Mars_Reconnaissance_Orbiter": {
+					"priority": "MEDIUM",
+					"frequency": 7.82
+				}
+			}
+		}
+	}
+}

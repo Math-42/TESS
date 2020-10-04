@@ -4,6 +4,12 @@ module.exports = class Header extends component {
 	constructor() {
 		super();
 		this.htmlComponent = document.createElement('div');
+		this.earthDiv = document.createElement('div');
+		this.marsDiv = document.createElement('div');
+		this.earthRotate = document.createElement('img');
+		this.earthRotate.draggable = false;
+		this.marsRotate = document.createElement('img');
+		this.marsRotate.draggable = false;
 		this.earthClock = document.createElement('div');
 		this.marsClock = document.createElement('div');
 		this.startedAt;
@@ -14,7 +20,7 @@ module.exports = class Header extends component {
 		let h = horario.getHours();
 		let m = horario.getMinutes();
 		let s = horario.getSeconds();
-		h = (parseInt(m) < 10) ? '0' + h : h;
+		h = (parseInt(h) < 10) ? '0' + h : h;
 		m = (parseInt(m) < 10) ? '0' + m : m;
 		s = (parseInt(s) < 10) ? '0' + s : s;
 		this.earthClock.textContent = h + ":" + m + ":" + s;
@@ -24,7 +30,7 @@ module.exports = class Header extends component {
 		let h = horario.getHours();
 		let m = horario.getMinutes();
 		let s = horario.getSeconds();
-		h = (parseInt(m) < 10) ? '0' + h : h;
+		h = (parseInt(h) < 10) ? '0' + h : h;
 		m = (parseInt(m) < 10) ? '0' + m : m;
 		s = (parseInt(s) < 10) ? '0' + s : s;
 		this.marsClock.textContent = h + ":" + m + ":" + s;
@@ -41,8 +47,24 @@ module.exports = class Header extends component {
 	build() {
 		this.startedAt = new Date();
 		this.htmlComponent.classList.add('glow');
-		this.htmlComponent.appendChild(this.marsClock)
-		this.htmlComponent.appendChild(this.earthClock)
+
+		this.earthRotate.src = "../assets/images/EarthRotate.gif"
+		this.marsRotate.src = "../assets/images/MarsRotate.gif"
+
+		this.earthDiv.classList.add('row');
+		this.marsDiv.classList.add('row')
+		this.earthDiv.style.justifyContent = 'flex-end';
+		this.marsDiv.style.justifyContent = 'flex-end';
+
+		
+		this.earthDiv.appendChild(this.earthClock)
+		this.earthDiv.appendChild(this.earthRotate)
+
+		this.marsDiv.appendChild(this.marsClock)
+		this.marsDiv.appendChild(this.marsRotate)
+
+		this.htmlComponent.appendChild(this.earthDiv)
+		this.htmlComponent.appendChild(this.marsDiv)
 
 		window.addEventListener('setEarthTime', () => {
 			this.changeEarthTime();
