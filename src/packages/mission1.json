@@ -1,7 +1,7 @@
 {
 	"title": "Package 1",
 	"package": {
-		"Message": "Missão importante para seu primeiro dia né? Já te explicaram sobre o manual, certo? Hoje iremos tomar um passo muito importante para a conquista do planeta vermelho, A perseverance irá chegar hoje e necessitamos realizar o agendamento dos pacotes que serão recebidos por cada antena",
+		"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
 		"sondas": {
 			"InSight_Lander": {
 				"prioridade": "MÉDIA",

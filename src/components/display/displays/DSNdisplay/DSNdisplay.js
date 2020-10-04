@@ -35,6 +35,10 @@ module.exports =  class Display extends StandardDisplay{
                     <img src="../images/USA.png" class="flags col-3" draggable="false">  
                     <img src="../images/Australia.png" class="flags col-3" draggable="false">  
                 </div>
+                <div class= "row">              
+                    <a href="#" class="previous">&#8249;</a>
+                    <a href="#" class="next">&#8250;</a>
+                </div>
 			</fieldset>
         `
         this.activatedSatellite();
