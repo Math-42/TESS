@@ -7,13 +7,13 @@ module.exports =  class Display extends StandardDisplay{
     }
     activatedSatellite(){
         this.activeSatellite = document.createElement('img')
-        this.activeSatellite.src = "../images/satellite.gif"
+        this.activeSatellite.src = "../images/Satellite.gif"
         this.activeSatellite.classList.add("satellite")
         document.getElementById('satelliteRow').appendChild(this.activeSatellite)
     }
     deactivatedSatellite(){
         this.deactiveSatellite = document.createElement('img')
-        this.deactiveSatellite.src = "../images/satellite.png"
+        this.deactiveSatellite.src = "../images/Satellite.png"
         this.deactiveSatellite.classList.add("satellite")
         document.getElementById('satelliteRow').appendChild(this.deactiveSatellite)
     }
@@ -29,6 +29,10 @@ module.exports =  class Display extends StandardDisplay{
                     <img src="../images/Spain.png" class="flags">  
                     <img src="../images/USA.png" class="flags">  
                     <img src="../images/Australia.png" class="flags">  
+                </div>
+                <div class= "row">              
+                    <a href="#" class="previous">&#8249;</a>
+                    <a href="#" class="next">&#8250;</a>
                 </div>
 			</fieldset>
         `
