@@ -1,22 +1,21 @@
 body,
 html {
-
-	box-sizing: border-box;
-	color: white;
-	height: 100%;
-	width: 100%;
-	justify-content: center;
-	justify-items: center;
-	font-family: 'VT323', monospace;
-	font-size: 1.1em;
-	font-weight: bold;
-	overflow-y: hidden;
-	-webkit-user-select: none;
-	-moz-user-select: -moz-none;
-	-ms-user-select: none;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	overflow-x: hidden;
+    box-sizing: border-box;
+    color: white;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    font-family: 'VT323', monospace;
+    font-size: 1.1em;
+    font-weight: bold;
+    overflow-y: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -40,19 +39,18 @@ html {
 }
 
 #display {
-
-	font-size: 1.6em !important;
-	height: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
+    font-size: 1.6em !important;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #mainContainer {
-	background-image: radial-gradient(rgb(0 0 0 / 60%), black 80%);
-	margin: 0;
-	color: white;
-	overflow-y: hidden;
-	overflow-x: hidden;
+    background-image: radial-gradient(rgb(0 0 0 / 60%), black 80%);
+    margin: 0;
+    color: white;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 @keyframes textShadow {
@@ -66,19 +64,17 @@ html {
 }
 
 #mainContainer:before {
-	content: " ";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background: linear-gradient(to bottom,
-			rgba(18, 16, 16, 0) 50%,
-			rgba(0, 0, 0, 0.25) 50%);
-	background-size: 100% 5px;
-	z-index: 2;
-	pointer-events: none;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 5px;
+    z-index: 2;
+    pointer-events: none;
 }
 
 #headers {
@@ -99,15 +95,14 @@ html {
 }
 
 #menus {
-
-	flex: 1;
-	border-right: 0.1em solid whitesmoke;
-	background: none;
-	padding: 0px;
-	margin: 0px;
-	overflow-x: hidden;
-	overflow-y: auto;
-	height: 100%;
+    flex: 1;
+    border-right: 0.1em solid whitesmoke;
+    background: none;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
 }
 
 button.option {
@@ -186,86 +181,91 @@ fieldset.package {
     white-space: normal;
 }
 
-
 img.planeta {
-	width: 1.3em;
-	height: 8%;
+    width: 1.3em;
+    height: 8%;
+}
+
+img {
+    width: 128px;
+    height: 128px;
 }
 
 textarea.package {
-	width: 100%;
-	color: white;
-	min-height: 30rem;
-	font-family: 'VT323', monospace !important;
-	font-size: 1.7rem;
-	background: none;
-	line-height: 1.2;
-	border: none;
-	cursor: default;
-	-webkit-user-select: none;
-	-webkit-touch-callout: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
+    width: 100%;
+    color: white;
+    min-height: 30rem;
+    font-family: 'VT323', monospace !important;
+    font-size: 1.7rem;
+    background: none;
+    line-height: 1.2;
+    border: none;
+    cursor: default;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
 }
 
 textarea:focus {
-	outline: none;
+    outline: none;
 }
 
-img.DSNmanual{
-	height: 30%;
-	width: 30%;	
+img.DSNmanual {
+    height: 30%;
+    width: 30%;
 }
 
-img.TESS{
-	height: 50%;
-	width: 50%;
+img.TESS {
+    height: 50%;
+    width: 50%;
 }
 
-img.antenna{
-	width: 100%;
-	height: auto !important;
+img.antenna {
+    width: 100%;
+    height: auto !important;
 }
 
 .btn-terminal {
-	border-style: solid;
-	border-width: 1px;
-	box-shadow: none;
-	font-size: 1em;
-	font-family: inherit;
-	position: relative;
-	z-index: 1;
-	background: none;
-	border-color: #fff;
-	color: white;
-	box-shadow: none;
-	outline: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: none;
+    font-size: 1em;
+    font-family: inherit;
+    position: relative;
+    z-index: 1;
+    background: none;
+    border-color: #fff;
+    color: white;
+    box-shadow: none;
+    outline: none;
 }
 
-.btn-terminal:hover{
-	background-color: whitesmoke;
-	color: black;
+.btn-terminal:hover {
+    background-color: whitesmoke;
+    color: black;
 }
 
 .btn-terminal:active,
-.btn-terminal:focus { 
-	outline: none;
+.btn-terminal:focus {
+    outline: none;
 }
 
-.progress{
-	background: none;
-	border-radius: 0px;
-	border-style: solid;
-	border-width: 1px;
-}
-.progress-bar{
-	border-radius: 0px;
-	background-color: white;
+.progress {
+    background: none;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 1px;
 }
 
-.stageChangesContainer{
-	justify-content: space-around;
-	align-items: center;
+.progress-bar {
+    border-radius: 0px;
+    background-color: white;
+}
+
+.stageChangesContainer {
+    justify-content: space-around;
+    align-items: center;
 }
