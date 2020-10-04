@@ -269,3 +269,7 @@ img.antenna {
     justify-content: space-around;
     align-items: center;
 }
+
+div.section{
+    margin: 10px 0px 10px 0px;
+}
