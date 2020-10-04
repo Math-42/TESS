@@ -7,8 +7,10 @@ module.exports = class Header extends component {
 		this.earthDiv = document.createElement('div');
 		this.marsDiv = document.createElement('div');
 		this.earthRotate = document.createElement('img');
+		this.earthRotate.classList.add('planeta');
 		this.earthRotate.draggable = false;
 		this.marsRotate = document.createElement('img');
+		this.marsRotate.classList.add('planeta');
 		this.marsRotate.draggable = false;
 		this.earthClock = document.createElement('div');
 		this.marsClock = document.createElement('div');
