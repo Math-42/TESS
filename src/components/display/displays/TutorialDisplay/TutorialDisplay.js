@@ -8,15 +8,15 @@ module.exports = class TutorialDisplay extends StandardDisplay {
         this.timer = 0;
         this.flow = [{
             time: 0,
-            role: "response",
+            role: "text",
             text: "Hey! You are in NASA's Kennedy Space Center. You must be very excited about your first day here!"
         }, {
             time: 2,
-            role: "response",
+            role: "text",
             text: "You're gonna work on our Mission Control Room at the Space Flight Operations Facility."
         }, {
             time: 4,
-            role: "response",
+            role: "text",
             text: "Your main assignment is to maintain a effective telecom system to keep in touch with astronauts in Mars"
         }, {
             time: 7,
@@ -24,35 +24,35 @@ module.exports = class TutorialDisplay extends StandardDisplay {
             text: "You mean, talk to them on phone?"
         }, {
             time: 8,
-            role: "response",
+            role: "text",
             text: "Ha!, You wish! You'll connect with them using our special communication system"
         }, {
             time: 10,
-            role: "response",
+            role: "text",
             text: "The Deep Space Network"
         }, {
             time: 12,
-            role: "response",
+            role: "text",
             text: "The DSN is NASA’s international array of giant radio antennas that supports interplanetary spacecraft missions."
         }, {
             time: 15,
-            role: "response",
+            role: "text",
             text: "You are going to have to design and operate the link that keeps people together over interplanetary distances"
         }, {
             time: 17,
-            role: "response",
+            role: "text",
             text: "You'll face some challenges setting up a fast and reliable connection with them"
         }, {
             time: 19,
-            role: "text",
+            role: "response",
             text: "Wow! But I do have that it takes to communicate with them?"
         }, {
             time: 20,
-            role: "response",
+            role: "text",
             text: "Trust me, you can do this. If you don't know something you can always check our Technical Manual"
         }, {
             time: 23,
-            role: "text",
+            role: "response",
             text: "OK! I'll do my best!"
         }];
         // // TALVEZ ISSO SEJA MELHOR EM OUTRO LUGAR
@@ -110,12 +110,12 @@ module.exports = class TutorialDisplay extends StandardDisplay {
         divActors.className = "actors";
 
         let imgActor = document.createElement('img');
-        imgActor.setAttribute("src", "../images/NASAemploye.gif");
+        imgActor.setAttribute("src", "../images/Consultor.gif");
         imgActor.className = "actor";
         divActors.appendChild(imgActor);
 
         let imgChar = document.createElement('img');
-        imgChar.setAttribute("src", "../images/Consultor.gif");
+        imgChar.setAttribute("src", "../images/NASAemploye.gif");
         imgChar.className = "char";
         divActors.appendChild(imgChar);
 
