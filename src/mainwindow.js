@@ -13,30 +13,33 @@ const ipc = require('electron').ipcRenderer;
 
 class MainWindow extends component {
 
-	constructor() {
-		super();
-		this.header = new Header();
-		this.options = new Options();
-		this.window = new Window();
-		this.display = new Display();
-		this.footer = new Footer();
-		this.MainMenu = new MainMenu();
-		this.htmlComponent = document.createElement('div');
-	}
+    constructor() {
+        super();
+        this.header = new Header();
+        this.options = new Options();
+        this.window = new Window();
+        this.display = new Display();
+        this.footer = new Footer();
+        this.MainMenu = new MainMenu();
+        this.htmlComponent = document.createElement('div');
+    }
 
     build() {
 
-		let duracao = Date.now();
+        const player = new Audio('../assets/music/endlessVoyage.mp3');
+        player.play();
 
-		this.init();
-		this.options.build();
-		this.display.build();
-		this.footer.build();
-		this.header.build();
-		this.MainMenu.build();
-		
-		document.getElementById('mainContainer').appendChild(this.htmlComponent);
-		document.getElementById("mainContainer").style.display = 'none'
+        let duracao = Date.now();
+
+        this.init();
+        this.options.build();
+        this.display.build();
+        this.footer.build();
+        this.header.build();
+        this.MainMenu.build();
+
+        document.getElementById('mainContainer').appendChild(this.htmlComponent);
+        document.getElementById("mainContainer").style.display = 'none'
 
         setTimeout(() => {
 
