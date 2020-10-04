@@ -18,8 +18,11 @@ require('electron-reload')(__dirname);
 //parametros inicias da janela principal
 let mainWindowparams = {
 	title: "Telecom Engineering Space Simulator",
-	path: '../src/index.html',
+	path: './index.html',
 	show: true,
+	icon: '../assets/images/TESS.png',
+	width: 1280,
+	height: 720,
 	webPreferences: {
 		nodeIntegration: true,
 		webviewTag: true,
