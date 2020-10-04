@@ -6,7 +6,7 @@ module.exports = class PackageDisplay extends StandardDisplay {
 	}
 	build() {
 		this.htmlComponent.innerHTML = `
-			<img src="../assets/images/nadir.png" class="flags w-100" draggable="false">  
+			<img src="../assets/images/TESS.png" class="TESS" draggable="false">  
 
 			<br><br>
 			<h2 class="glow">Our first sufficiently stable operating system</h2>

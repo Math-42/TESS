@@ -197,7 +197,17 @@ textarea:focus {
 	outline: none;
 }
 
-img.antenna {
+img.DSNmanual{
+	height: 30%;
+	width: 30%;	
+}
+
+img.TESS{
+	height: 50%;
+	width: 50%;
+}
+
+img.antenna{
 	width: 100%;
 	height: auto !important;
 }
