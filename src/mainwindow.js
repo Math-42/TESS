@@ -24,16 +24,15 @@ class MainWindow extends component {
 
     build() {
 
-        let duracao = Date.now();
+		let duracao = Date.now();
 
-        this.init();
-        this.options.build();
-        this.display.build();
-        this.footer.build();
-        this.header.build();
-
-        GlobalMecanics.sendPackage('package_2', 8000);
-        document.getElementById('mainContainer').appendChild(this.htmlComponent);
+		this.init();
+		this.options.build();
+		this.display.build();
+		this.footer.build();
+		this.header.build();
+		
+		document.getElementById('mainContainer').appendChild(this.htmlComponent);
 
         setTimeout(() => {
 

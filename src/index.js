@@ -8,8 +8,7 @@ const url = require('url');
 const ipc = electron.ipcMain;
 const dialog = require('electron').dialog;
 
-const devMode = false;
-let initialWindow;
+const devMode = true;
 let mainWindow;
 
 // Enable live reload for all the files inside your project directory
@@ -18,7 +17,7 @@ require('electron-reload')(__dirname);
 
 //parametros inicias da janela principal
 let mainWindowparams = {
-	title: "ZenView",
+	title: "Telecom Engineering Space Simulator",
 	path: '../src/index.html',
 	show: true,
 	webPreferences: {
@@ -46,7 +45,7 @@ function createWindow(params) {
 		window = null;
 	});
 	window.removeMenu();
-	window.title = "Zen";
+	window.title = "Telecom Engineering Space Simulator";
 	return window;
 }
 //event listener que espera o app ser criado para criar as janelas
@@ -72,8 +71,9 @@ app.on('activate', () => {
 //listerner que avisa que o load da janela principal terminou
 ipc.on('mainLoadCompleto', () => {
 	setTimeout(() => {
-		mainWindow.title = 'ZenJogo'
+		mainWindow.title = 'Telecom Engineering Space Simulator'
 		mainWindow.show();
+		mainWindow.setFullScreen(true);
 	}, 250);
 });
 

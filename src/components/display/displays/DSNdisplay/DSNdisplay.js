@@ -1,78 +1,99 @@
+const {
+    desktopCapturer
+} = require('electron');
 const StandardDisplay = require('../../standardDisplay');
+const Antenna = require('./antenna');
 
-module.exports =  class Display extends StandardDisplay{
-	constructor(){
-		super('DSNdisplay');
-		//this.build();
+module.exports = class Display extends StandardDisplay {
+    constructor() {
+        super('DSNdisplay');
+        this.progress = 0;
+
+        this.htmlComponent = document.createElement('fieldset');
+        this.htmlComponent.classList.add('package');
+
+        this.stageChangesContainer = document.createElement('div');
+
+        this.title = document.createElement('legend');
+        this.title.classList.add('packageTitle');
+        this.title.textContent = 'Deep Space Network'
+
+        this.htmlComponent.appendChild(this.title)
+        this.htmlComponent.appendChild(this.stageChangesContainer)
+
+        this.htmlContainer = document.createElement('div');
+        this.htmlContainer.style.display = 'flex';
+
+        this.htmlComponent.appendChild(this.htmlContainer);
+
+        this.Antenna1 = new Antenna('Spain', 3);
+        this.Antenna2 = new Antenna('Spain', 1);
+        this.Antenna3 = new Antenna('USA', 1);
+        this.Antenna4 = new Antenna('Australia', 1);
     }
-    createButton(){
-        let spacecraftList = ["InSight Lander", "Maren", "Mars Odyssey", "Mars 2020", "Mars Reconnaissance Orbiter"]
 
-        this.nextArrow = document.createElement('button')
-        this.nextArrow.classList = 'col btn btn-default btn-ghost glow option'
-        this.nextArrow.textContent = '>'
-
-        this.backArrow = document.createElement('button')
-        this.backArrow.classList = 'col btn btn-default btn-ghost glow option'
-        this.backArrow.textContent = '<'
-
-        this.option = document.createElement('button')
-        this.option.classList = 'col btn btn-default btn-ghost glow option DSNoption'
-        this.option.textContent = spacecraftList[0]
-
-        document.getElementById('DSNrow').appendChild(this.backArrow)
-        document.getElementById('DSNrow').appendChild(this.option)
-        document.getElementById('DSNrow').appendChild(this.nextArrow)
+    loadProgress() {
+        this.progress = 0;
+        document.getElementById('antpg').style.width = '0%';
+        document.getElementById('progressBar').style.display = 'flex';
+        document.getElementById('progressBar').classList.add("visible")
+        document.getElementById('progressBar').classList.remove("invisible")
+        document.getElementById('antennaProgressContainer').style.justifyContent = 'space-around';
+        this.fill();
         
+        this.progress = 0;
     }
-    activatedSatellite(){
-        this.activeSatellite = document.createElement('img')
-        this.activeSatellite.draggable = false;
-        this.activeSatellite.classList.add('col-3')
-        this.activeSatellite.src = "../assets/images/Satellite.gif"
-        this.activeSatellite.classList.add("Satellite")
-        document.getElementById('satelliteRow').appendChild(this.activeSatellite)
-    }
-    deactivatedSatellite(){
-        this.deactiveSatellite = document.createElement('img')
-        this.deactiveSatellite.draggable = false;
-        this.deactiveSatellite.classList.add('col-3')
-        this.deactiveSatellite.src = "../assets/images/Satellite.png"
-        this.deactiveSatellite.classList.add("Satellite")
-        document.getElementById('satelliteRow').appendChild(this.deactiveSatellite)
-    }
-	build(){
-		this.htmlComponent.innerHTML = `
-			<fieldset class="package">
-				<legend class="packageTitle">Deep Space Network</legend>
-                <div class= "row" id = "satelliteRow">              
-                    
-                </div>
-                <div class= "row">              
-                    <img src="../assets/images/Spain.png" class="flags col-3" draggable="false">            
-                    <img src="../assets/images/Spain.png" class="flags col-3" draggable="false">  
-                    <img src="../assets/images/USA.png" class="flags col-3" draggable="false">  
-                    <img src="../assets/images/Australia.png" class="flags col-3" draggable="false">  
-                </div>
-                <div class= "row" id="DSNrow">              
-                    
-                </div>
-                <div class= "row" id="DSNrow"> 
-                    
-                </div>
-                <div class= "row" id="DSNrow">
-                    
-                </div>
-			</fieldset>
-        `
-        this.activatedSatellite();
-        this.activatedSatellite();
-        this.activatedSatellite();
-        this.deactivatedSatellite();
 
-        this.createButton();
-        this.createButton();
-        this.createButton();
-        this.createButton();
-	}
+    fill() {
+        setTimeout(() => {
+
+            if (this.progress <= 100) {
+                this.progress++
+                document.getElementById('antpg').style.width = this.progress + '%';
+                this.fill()
+
+            }else{
+                setTimeout(() =>{
+                    document.getElementById('progressBar').classList.add("invisible")
+                    document.getElementById('antpg').style.width = '0%';
+                },500)
+                
+            }
+
+        }, 50);
+
+    }
+
+    build() {
+        this.htmlContainer.classList.add('row');
+
+
+        this.stageChangeBtn = document.createElement('button')
+        this.stageChangeBtn.textContent = 'save changes'
+        this.stageChangeBtn.className = 'btn-terminal mb-4 col-3'
+
+        this.stageChangeBtn.onclick = () => {
+            this.loadProgress();
+        }
+
+        this.loadBarBackground = document.createElement('div')
+        this.loadBarBackground.id = 'progressBar'
+        this.loadBarBackground.classList.add("invisible");
+        this.loadBarBackground.className = 'progress mb-4 col-8 p-0'
+        this.loadBarBackground.innerHTML = '<div class="progress-bar" id="antpg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>'
+
+        this.stageChangesContainer.className = 'row stageChangesContainer'
+        this.stageChangesContainer.id = 'antennaProgressContainer'
+
+        this.stageChangesContainer.appendChild(this.stageChangeBtn);
+        this.stageChangesContainer.appendChild(this.loadBarBackground);
+
+        this.htmlContainer.appendChild(this.Antenna1.htmlComponent);
+        this.htmlContainer.appendChild(this.Antenna2.htmlComponent);
+        this.htmlContainer.appendChild(this.Antenna3.htmlComponent);
+        this.htmlContainer.appendChild(this.Antenna4.htmlComponent);
+
+        document.getElementById('progressBar').classList.add("invisible")
+
+    }
 }
