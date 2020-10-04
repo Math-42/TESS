@@ -1,20 +1,23 @@
 const StandardDisplay = require('../../standardDisplay');
 const Package = require('./package');
-const fs = require('fs');
-
+const GlobalMecanics = require('../../../globalMecanics/globalMecanics')
 module.exports = class PackageDisplay extends StandardDisplay {
 	constructor() {
 		super('PackageDisplay');
 		this.packages = {};
 	}
 
-	addPackage(packagePath) {
+	addPackage(packageName,notify) {
+		let packageData = GlobalMecanics.getPackage(packageName);
+		let newPackage = new Package(packageData);
+		this.packages[newPackage.title] = newPackage.htmlComponent;
+
+		if(notify === false) return
 		const myNotification = new Notification('ZenJogo', {
-			body: 'New package arrived!!'
+			body: 'New package arrived!!'+ newPackage.title
 		})
 
-		let newPackage = new Package(packagePath);
-		this.packages[newPackage.title] = newPackage.htmlComponent;
+		
 	}
 
 	openPackage() {
@@ -22,8 +25,8 @@ module.exports = class PackageDisplay extends StandardDisplay {
 	}
 
 	build() {
-		this.addPackage('./src/packages/mission1.json');
-
+		this.addPackage('package_1',false);
+		
 		window.addEventListener('addNewPackage', (evt) => {
 			this.addPackage(evt.detail);
 		});
@@ -32,7 +35,6 @@ module.exports = class PackageDisplay extends StandardDisplay {
 			window.dispatchEvent(new CustomEvent('showDisplay', {
 				detail: 'PackageDisplay',
 			}));
-			console.log(evt.detail,this.packages);
 			this.htmlComponent.appendChild(this.packages[evt.detail]);
 		});
 	}

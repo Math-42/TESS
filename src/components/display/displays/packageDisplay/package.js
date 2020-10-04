@@ -1,13 +1,13 @@
-const fs = require('fs');
+
 
 module.exports = class Package{
-	constructor(packagePath){
+	constructor(packageData){
 		this.htmlComponent = document.createElement('fieldset');
 		this.htmlComponent.classList.add('package');
 		this.dataContainer = document.createElement('textarea');
 		this.dataContainer.classList.add('package');
 		this.dataContainer.classList.add('glow');
-		this.data = JSON.parse(fs.readFileSync(packagePath));
+		this.data = packageData;
 		this.title = this.data.title;
 		this.build();
 	}
