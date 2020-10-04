@@ -6,6 +6,7 @@ const SystemDisplay = require('./displays/systemDisplay/systemDisplay');
 const TutorialDisplay = require('./displays/TutorialDisplay/TutorialDisplay');
 const DSNManualDisplay = require('./displays/manual/DSN.js')
 const MarsManualDisplay = require('./displays/manual/mars.js')
+const SpacecraftManualDisplay = require('./displays/manual/spacecrafts.js')
 
 module.exports = class Display extends component {
 	constructor() {
@@ -14,9 +15,10 @@ module.exports = class Display extends component {
 		this.packageDisplay = new PackageDisplay();
 		this.DSNDisplay = new DSNDisplay();
 		this.SystemDisplay = new SystemDisplay();
-    this.TutorialDisplay = new TutorialDisplay();
+    	this.TutorialDisplay = new TutorialDisplay();
 		this.DSNManualDisplay = new DSNManualDisplay();
 		this.MarsManualDisplay = new MarsManualDisplay();
+		this.SpacecraftManualDisplay = new SpacecraftManualDisplay();
 		this.displayGroup = {};
 	}
 	addDisplay(display) {
@@ -36,11 +38,10 @@ module.exports = class Display extends component {
 		this.addDisplay(this.SystemDisplay);
 		this.addDisplay(this.DSNManualDisplay);
 		this.addDisplay(this.MarsManualDisplay);
-    	this.addDisplay(this.TutorialDisplay);
+		this.addDisplay(this.TutorialDisplay);
+		this.addDisplay(this.SpacecraftManualDisplay);
 
 		this.setCurrentDisplay('SystemDisplay')
-
-        this.setCurrentDisplay('SystemDisplay')
 
         window.addEventListener('setCurrentDisplay', (evt) => {
 

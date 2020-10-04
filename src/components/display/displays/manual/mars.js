@@ -17,7 +17,7 @@ module.exports = class Display extends StandardDisplay {
                 <div class="row">
                     <span class="col glow" align='justify'> &nbsp;&nbsp;Mars has no global magnetic field today, but areas of the Martian crust in the southern hemisphere are highly magnetized, indicating traces of a magnetic field from 4 billion years ago. <br>
                     &nbsp;&nbsp;The temperature can be high as 20 degrees Celsius or as low as about -153 degrees Celsius. It happens because the atmosphere is so thin and the heat from the Sun easily escapes this planet. <br>
-                    &nbsp;&nbsp;But might you ask: how Mars formed? Not just Mars but all the rocky planets of the inner solar system? Well we want to answer that question, so we build InSight. You will understand a little more later… Now that you understand a little bit about your neighbour, let’s continue playing a little bit more to really get Mars. <br>
+                    &nbsp;&nbsp;But might you ask: how Mars is formed? Not just Mars but all the rocky planets of the inner solar system? Well we want to answer that question, so we build InSight. You will understand a little more later… Now that you understand a little bit about your neighbour, let’s continue playing a little bit more to really get Mars. <br>
                     </span> 
                 </div>
             </fieldset>
