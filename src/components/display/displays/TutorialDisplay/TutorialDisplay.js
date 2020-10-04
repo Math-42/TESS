@@ -110,12 +110,12 @@ module.exports = class TutorialDisplay extends StandardDisplay {
         divActors.className = "actors";
 
         let imgActor = document.createElement('img');
-        imgActor.setAttribute("src", "../images/Consultor.gif");
+        imgActor.setAttribute("src", "../images/NASAemploye.gif");
         imgActor.className = "actor";
         divActors.appendChild(imgActor);
 
         let imgChar = document.createElement('img');
-        imgChar.setAttribute("src", "../images/NASAemploye.gif");
+        imgChar.setAttribute("src", "../images/Consultor.gif");
         imgChar.className = "char";
         divActors.appendChild(imgChar);
 
