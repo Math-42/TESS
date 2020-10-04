@@ -7,7 +7,9 @@ module.exports = class Header extends component {
 		this.earthDiv = document.createElement('div');
 		this.marsDiv = document.createElement('div');
 		this.earthRotate = document.createElement('img');
+		this.earthRotate.draggable = false;
 		this.marsRotate = document.createElement('img');
+		this.marsRotate.draggable = false;
 		this.earthClock = document.createElement('div');
 		this.marsClock = document.createElement('div');
 		this.startedAt;
@@ -46,8 +48,8 @@ module.exports = class Header extends component {
 		this.startedAt = new Date();
 		this.htmlComponent.classList.add('glow');
 
-		this.earthRotate.src = "../images/EarthRotate.gif"
-		this.marsRotate.src = "../images/MarsRotate.gif"
+		this.earthRotate.src = "../assets/images/EarthRotate.gif"
+		this.marsRotate.src = "../assets/images/MarsRotate.gif"
 
 		this.earthDiv.classList.add('row');
 		this.marsDiv.classList.add('row')
