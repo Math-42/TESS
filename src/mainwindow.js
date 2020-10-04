@@ -5,7 +5,6 @@ const Header = require('./components/header/header');
 const Window = require('./components/window/window');
 const GlobalMecanics = require('./components/globalMecanics/globalMecanics');
 
-const fs = require('fs');
 const component = require('./components/component');
 const ipc = require('electron').ipcRenderer;
 
