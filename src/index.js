@@ -1,7 +1,7 @@
 console.log('running....');
 
 const electron = require('electron');
-const app = electron.app;
+const app = require('electron').app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
@@ -12,19 +12,13 @@ const debugMode = true;
 let initialWindow;
 let mainWindow;
 
-//parametros iniciais da janela inicial
-let initialWindowparams = {
-	frame: false,
-	titleBarStyle: 'hidden',
-	width: 539,
-	height: 170,
-	resizable: false,
-	show: false,
-	path: '../src/initialWindow/initialWindow.html',
-	openDevTools: false
-};
+// Enable live reload for all the files inside your project directory
+require('electron-reload')(__dirname);
+
+
 //parametros inicias da janela principal
 let mainWindowparams = {
+	title: "ZenView",
 	path: '../src/index.html',
 	show: debugMode,
 	webPreferences: {
@@ -51,17 +45,13 @@ function createWindow(params) {
 		window = null;
 	});
 	window.removeMenu();
-	window.setTitle("Zen");
+	window.title = "Zen";
 	return window;
 }
 //event listener que espera o app ser criado para criar as janelas
 app.on('ready', () => {
-	initialWindow = createWindow(initialWindowparams);
 	mainWindow = createWindow(mainWindowparams);
 	//apenas mostrara a janela quando estiver pronta
-	initialWindow.once('ready-to-show', () => {
-		initialWindow.show();
-	});
 });
 
 //encerra o programa se todas as janelas forem fechadas
@@ -73,28 +63,17 @@ app.on('window-all-closed', () => {
 
 //caso a janela nao tenha sido criada força sua criação
 app.on('activate', () => {
-	if (initialWindow === null) {
-		createWindow(initialWindow);
+	if (mainWindow === null) {
 		createWindow(mainWindow);
 	}
 });
 
 //listerner que avisa que o load da janela principal terminou
 ipc.on('mainLoadCompleto', () => {
-	initialWindow.close();
 	setTimeout(() => {
+		mainWindow.title = 'ZenJogo'
 		mainWindow.show();
 	}, 250);
-});
-
-ipc.on('open-file-dialog-for-dir', async event => {
-
-	const dir = await dialog.showOpenDialog(mainWindow,{
-		properties: ['openDirectory']
-	});
-	if (dir) {
-		event.sender.send('selected-dir', dir.filePaths[0]);
-	}
 });
 
 ipc.on('openDialog', (event, config) => {
