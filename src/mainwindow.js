@@ -3,13 +3,15 @@ const Display = require('./components/display/display');
 const Footer = require('./components/footer/footer');
 const Header = require('./components/header/header');
 const Window = require('./components/window/window');
+
+
 const GlobalMecanics = require('./components/globalMecanics/globalMecanics');
 const MainMenu = require('./components/mainMenu/mainMenu');
 
 const component = require('./components/component');
 const ipc = require('electron').ipcRenderer;
 
-class MainWindow extends component{
+class MainWindow extends component {
 
 	constructor() {
 		super();
@@ -22,7 +24,7 @@ class MainWindow extends component{
 		this.htmlComponent = document.createElement('div');
 	}
 
-	build() {
+    build() {
 
 		let duracao = Date.now();
 
@@ -36,20 +38,20 @@ class MainWindow extends component{
 		document.getElementById('mainContainer').appendChild(this.htmlComponent);
 		document.getElementById("mainContainer").style.display = 'none'
 
-		setTimeout(() => { 
+        setTimeout(() => {
 
-			ipc.send('mainLoadCompleto', {
-				show: true,
-			});
+            ipc.send('mainLoadCompleto', {
+                show: true,
+            });
 
-		}, duracao);
+        }, duracao);
 
-	}
+    }
 }
 
 window.onload = () => {
 
-	const App = new MainWindow();
-	App.build();
+    const App = new MainWindow();
+    App.build();
 
 };

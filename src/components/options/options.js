@@ -3,6 +3,7 @@ const Option = require('./option');
 const OptionGroup = require('./optionGroup');
 
 module.exports = class Options extends component {
+
 	constructor() {
 		super();
 		this.htmlComponent = document.createElement('div');
@@ -75,6 +76,10 @@ module.exports = class Options extends component {
 		this.optionsGroups['mainMenuOptionGroup'] = this.mainMenuOptionGroup;
 
 		this.mainMenuOptionGroup.addOption('/Readme.md', this.callMenuFunction('SystemDisplay'))
+    
+    this.mainMenuOptionGroup.addOption('/Intro.gif', this.callMenuFunction('TutorialDisplay'))
+
+    
 		this.mainMenuOptionGroup.addOption('/Packages', this.callOptionGroupFunction('packageOptionGroup'))
 		this.mainMenuOptionGroup.addOption('/Communication', this.callOptionGroupFunction('toolsOptionGroup'))
 		this.mainMenuOptionGroup.addOption('/Manual', this.callOptionGroupFunction('manualOptionGroup'))
@@ -98,7 +103,7 @@ module.exports = class Options extends component {
 		this.manualOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
 		this.manualOptionGroup.addOption('./Packages.txt', this.callMenuFunction('DSNdisplay'));
 		this.manualOptionGroup.addOption('./DSN.txt', this.callMenuFunction('Manual_DNS'));
-		this.manualOptionGroup.addOption('./Mars.txt', this.callMenuFunction('DSNdisplay'));
+		this.manualOptionGroup.addOption('./Mars.txt', this.callMenuFunction('Manual_Mars'));
 		this.manualOptionGroup.addOption('./Spacecrafts.txt', this.callMenuFunction('DSNdisplay'));
 		this.manualOptionGroup.addOption('./WAP.txt', this.callMenuFunction('DSNdisplay'));
 		this.manualOptionGroup.addOption('./entanglement.txt', this.callMenuFunction('DSNdisplay'));
