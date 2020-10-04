@@ -26,10 +26,24 @@ module.exports = class Options extends component {
 	}
 
 	callOptionGroupFunction(name) {
-		
+
 		return () => {
-			
+			window.dispatchEvent(new CustomEvent('showDisplay', {
+				detail: 'SystemDisplay',
+			}));
 			window.dispatchEvent(new CustomEvent('showOptionGroup', {
+				detail: name,
+			}));
+		}
+
+
+	}
+
+	openPackageFunction(name) {
+
+		return () => {
+
+			window.dispatchEvent(new CustomEvent('openPackage', {
 				detail: name,
 			}));
 		}
@@ -44,20 +58,19 @@ module.exports = class Options extends component {
 		}
 	}
 
-	packageOptionGroupOpt(){
+	packageOptionGroupOpt() {
 		this.addOptionGroup(this.packageOptionGroup);
 		this.optionsGroups['packageOptionGroup'] = this.packageOptionGroup;
 
 		this.packageOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
-		this.packageOptionGroup.addOption('./Package1.bag', this.callMenuFunction('PackageDisplay'))
-		this.packageOptionGroup.addOption('./Package2.bag', this.callMenuFunction('PackageDisplay'))
-		this.packageOptionGroup.addOption('./Package3.bag', this.callMenuFunction('PackageDisplay'))
+		this.packageOptionGroup.addOption('./Package1.bag', this.openPackageFunction('Package_1'))
 	}
 
-	mainMenuOptionGroupOpt(){
+	mainMenuOptionGroupOpt() {
 		this.addOptionGroup(this.mainMenuOptionGroup);
 		this.optionsGroups['mainMenuOptionGroup'] = this.mainMenuOptionGroup;
 
+		this.mainMenuOptionGroup.addOption('/Readme.md', this.callMenuFunction('SystemDisplay'))
 		this.mainMenuOptionGroup.addOption('/Packages', this.callOptionGroupFunction('packageOptionGroup'))
 		this.mainMenuOptionGroup.addOption('/Communication', this.callOptionGroupFunction('toolsOptionGroup'))
 		this.mainMenuOptionGroup.addOption('/Manual', this.callOptionGroupFunction('manualOptionGroup'))
@@ -71,7 +84,7 @@ module.exports = class Options extends component {
 		this.optionsGroups['tools'] = this.toolsOptionGroup.htmlComponent;
 
 		this.toolsOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
-		this.toolsOptionGroup.addOption('./DSN.exe', this.callMenuFunction('DSNdisplay'));
+		this.toolsOptionGroup.addOption('./DSN.sh', this.callMenuFunction('DSNdisplay'));
 	}
 
 	manualOptionGroupOpt() {
@@ -79,15 +92,21 @@ module.exports = class Options extends component {
 		this.optionsGroups['tools'] = this.manualOptionGroup.htmlComponent;
 
 		this.manualOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
+		this.manualOptionGroup.addOption('./Packages.txt', this.callMenuFunction('DSNdisplay'));
+		this.manualOptionGroup.addOption('./DSN.txt', this.callMenuFunction('DSNdisplay'));
+		this.manualOptionGroup.addOption('./Mars.txt', this.callMenuFunction('DSNdisplay'));
+		this.manualOptionGroup.addOption('./Spacecrafts.txt', this.callMenuFunction('DSNdisplay'));
+		this.manualOptionGroup.addOption('./WAP.txt', this.callMenuFunction('DSNdisplay'));
+		this.manualOptionGroup.addOption('./entanglement.txt', this.callMenuFunction('DSNdisplay'));
 	}
 
-	build() {	
-		
+	build() {
+
 		this.mainMenuOptionGroupOpt()
 		this.toolsOptionGroupOpt()
 		this.packageOptionGroupOpt()
 		this.manualOptionGroupOpt()
-		
+
 		this.setCurrentOptionGroup('mainMenuOptionGroup');
 
 		document.getElementById('menus').appendChild(this.htmlComponent);
