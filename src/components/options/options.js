@@ -66,7 +66,7 @@ module.exports = class Options extends component {
 		this.packageOptionGroup.addOption('./Package1.bag', this.openPackageFunction('package_1'))
 
 		window.addEventListener('addNewPackage', (evt) => {
-			this.packageOptionGroup.addOption(evt.detail, this.openPackageFunction(evt.detail))
+			this.packageOptionGroup.addOption('./'+ evt.detail + '.bag', this.openPackageFunction(evt.detail))
 		});
 	}
 
