@@ -1,6 +1,5 @@
 const Options = require('../options/options');
 const Display = require('../display/display');
-const fs = require('fs');
 const component = require('../component');
 
 module.exports = class Window extends component{
