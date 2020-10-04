@@ -13,11 +13,11 @@ This is a game with multiple endings based on your choices.
 
 > [Gabriel Garofa](https://github.com/Ggarofa)
 
-> [Leonardo Celente] (https://github.com/leocelente)
+> [Leonardo Celente](https://github.com/leocelente)
 
 > [Maíra Canal](https://github.com/mairacanal)
 
-> [Matheus Vieira}(https://github.com/Math-42)
+> [Matheus Vieira](https://github.com/Math-42)
 
 > [Jorge Marcelo del Llano Risco](https://github.com/jorgemrisco) 
 
