@@ -10,6 +10,7 @@ module.exports = class Antenna {
 
 		this.flag = document.createElement('img');
 		this.flag.src = "../assets/images/" + flagName + ".png";
+		this.flag.className = 'w-100';
 		this.antenna.draggable = false;
 
 		this.spacecrafContainer = document.createElement('div');

@@ -15,6 +15,7 @@ html {
 	-ms-user-select: none;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -42,6 +43,7 @@ html {
 	font-size: 1.6em !important;
 	height: 100%;
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 #mainContainer {
@@ -49,6 +51,7 @@ html {
 	margin: 0;
 	color: white;
 	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 
@@ -105,7 +108,9 @@ html {
 	background: none;
 	padding: 0px;
 	margin: 0px;
+	overflow-x: hidden;
 	overflow-y: auto;
+	height: 100%;
 }
 
 button.option {
@@ -170,7 +175,7 @@ fieldset.package {
 }
 
 img.planeta {
-	width: 8%;
+	width: 1.3em;
 	height: 8%;
 }
 
@@ -212,4 +217,43 @@ img.antenna{
 	height: auto !important;
 }
 
+.btn-terminal {
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: none;
+	font-size: 1em;
+	font-family: inherit;
+	position: relative;
+	z-index: 1;
+	background: none;
+	border-color: #fff;
+	color: white;
+	box-shadow: none;
+	outline: none;
+}
 
+.btn-terminal:hover{
+	background-color: whitesmoke;
+	color: black;
+}
+
+.btn-terminal:active,
+.btn-terminal:focus { 
+	outline: none;
+}
+
+.progress{
+	background: none;
+	border-radius: 0px;
+	border-style: solid;
+	border-width: 1px;
+}
+.progress-bar{
+	border-radius: 0px;
+	background-color: white;
+}
+
+.stageChangesContainer{
+	justify-content: space-around;
+	align-items: center;
+}
