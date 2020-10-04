@@ -5,7 +5,26 @@ module.exports =  class Display extends StandardDisplay{
 		super('DSNdisplay');
 		//this.build();
     }
+    createButton(){
+        let spacecraftList = ["InSight Lander", "Maren", "Mars Odyssey", "Mars 2020", "Mars Reconnaissance Orbiter"]
 
+        this.nextArrow = document.createElement('button')
+        this.nextArrow.classList = 'col btn btn-default btn-ghost glow option'
+        this.nextArrow.textContent = '>'
+
+        this.backArrow = document.createElement('button')
+        this.backArrow.classList = 'col btn btn-default btn-ghost glow option'
+        this.backArrow.textContent = '<'
+
+        this.option = document.createElement('button')
+        this.option.classList = 'col btn btn-default btn-ghost glow option DSNoption'
+        this.option.textContent = spacecraftList[0]
+
+        document.getElementById('DSNrow').appendChild(this.backArrow)
+        document.getElementById('DSNrow').appendChild(this.option)
+        document.getElementById('DSNrow').appendChild(this.nextArrow)
+        
+    }
     activatedSatellite(){
         this.activeSatellite = document.createElement('img')
         this.activeSatellite.draggable = false;
@@ -35,9 +54,14 @@ module.exports =  class Display extends StandardDisplay{
                     <img src="../images/USA.png" class="flags col-3" draggable="false">  
                     <img src="../images/Australia.png" class="flags col-3" draggable="false">  
                 </div>
-                <div class= "row">              
-                    <a href="#" class="previous">&#8249;</a>
-                    <a href="#" class="next">&#8250;</a>
+                <div class= "row" id="DSNrow">              
+                    
+                </div>
+                <div class= "row" id="DSNrow"> 
+                    
+                </div>
+                <div class= "row" id="DSNrow">
+                    
                 </div>
 			</fieldset>
         `
@@ -45,5 +69,10 @@ module.exports =  class Display extends StandardDisplay{
         this.activatedSatellite();
         this.activatedSatellite();
         this.deactivatedSatellite();
+
+        this.createButton();
+        this.createButton();
+        this.createButton();
+        this.createButton();
 	}
 }

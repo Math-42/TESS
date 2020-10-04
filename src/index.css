@@ -116,7 +116,13 @@ button.option {
 	outline: none;
 	border: none;
 	background: none;
+}
 
+button.DSNoption {
+	font-size: 0.8em;
+	color: white !important;
+	white-space: nowrap;
+	vertical-align: bottom;
 }
 
 button.option:hover {
