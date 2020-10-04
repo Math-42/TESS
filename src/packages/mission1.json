@@ -4,24 +4,24 @@
 		"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
 		"sondas": {
 			"InSight_Lander": {
-				"prioridade": "MÉDIA",
-				"frequencia": 7.18
+				"priority": "MEDIUM",
+				"frequency": 7.18
 			},
 			"Maren": {
-				"prioridade": "MÉDIA",
-				"frequencia": 7.18
+				"priority": "MEDIUM",
+				"frequency": 7.18
 			},
 			"Mars_Odyssey": {
-				"prioridade": "MÉDIA",
-				"frequencia": 7.48
+				"priority": "MEDIUM",
+				"frequency": 7.48
 			},
 			"Mars_2020": {
-				"prioridade": "ALTA",
-				"frequencia": 7.48
+				"priority": "HIGH",
+				"frequency": 7.48
 			},
 			"Mars_Reconnaissance_Orbiter": {
-				"prioridade": "MÉDIA",
-				"frequencia": 7.82
+				"priority": "MEDIUM",
+				"frequency": 7.82
 			}
 		}
 	}
