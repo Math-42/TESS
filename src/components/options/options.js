@@ -82,8 +82,6 @@ module.exports = class Options extends component {
 		this.mainMenuOptionGroup.addOption('/Communication', this.callMenuFunction('Communication'))
 		this.mainMenuOptionGroup.addOption('/Manual', this.callOptionGroupFunction('manualOptionGroup'))
 		this.mainMenuOptionGroup.addOption('/Tools', this.callOptionGroupFunction('toolsOptionGroup'))
-		this.mainMenuOptionGroup.addOption('/Statistics')
-		this.mainMenuOptionGroup.addOption('/Settings')
 	}
 
 	toolsOptionGroupOpt() {
@@ -99,12 +97,9 @@ module.exports = class Options extends component {
 		this.optionsGroups['tools'] = this.manualOptionGroup.htmlComponent;
 
 		this.manualOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
-		this.manualOptionGroup.addOption('./Packets.txt', this.callMenuFunction('DSNdisplay'));
 		this.manualOptionGroup.addOption('./DSN.txt', this.callMenuFunction('Manual_DNS'));
 		this.manualOptionGroup.addOption('./Mars.txt', this.callMenuFunction('Manual_Mars'));
 		this.manualOptionGroup.addOption('./Spacecrafts.txt', this.callMenuFunction('Manual_Spacecraft'));
-		this.manualOptionGroup.addOption('./WAP.txt', this.callMenuFunction('DSNdisplay'));
-		this.manualOptionGroup.addOption('./Entanglement.txt', this.callMenuFunction('DSNdisplay'));
 	}
 
 	build() {

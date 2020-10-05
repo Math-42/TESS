@@ -22,7 +22,7 @@ module.exports = class Display extends component {
 	}
 	addDisplay(display) {
 		this.displayGroup[display.displayName] = display.htmlComponent;
-		console.log(this.displayGroup[display.displayName]);
+
 		this.htmlComponent.appendChild(this.displayGroup[display.displayName]);
 		display.build();
 	}

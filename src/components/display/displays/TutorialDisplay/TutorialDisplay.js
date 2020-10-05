@@ -80,13 +80,13 @@ module.exports = class TutorialDisplay extends Component {
     add(text, role) {
         var dialogos = document.getElementsByClassName("texts");
         var texts = dialogos[0];
-        // console.log(this.texts);
+
         texts.appendChild(this.createText(text, role));
 
     }
 
     showTutorial() {
-        console.log(this.timer);
+
         this.flow.forEach(
             (point) => {
                 if (this.timer == point.time) {
@@ -104,7 +104,7 @@ module.exports = class TutorialDisplay extends Component {
 
     build() {
 
-        console.log(this.texts);
+
 
         let divActors = document.createElement('div');
         divActors.className = "actors";
@@ -140,7 +140,7 @@ module.exports = class TutorialDisplay extends Component {
 
         let divScreen = document.createElement('div');
         divScreen.className = "screen";
-        console.log(this.texts);
+
         divScreen.appendChild(this.texts);
         divScreen.appendChild(divActors);
 
@@ -166,9 +166,9 @@ module.exports = class TutorialDisplay extends Component {
 
         window.addEventListener('showDisplay', (event) => {
             if (event.detail == "TutorialDisplay") {
-                console.log(this.timestep);
+
                 this.showTutorial();
-                console.log("dasda");
+
                 this.interval = setInterval(() => {
                     this.showTutorial();
                 }, this.timestep);

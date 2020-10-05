@@ -69,7 +69,7 @@ module.exports = class Display extends StandardDisplay {
         let answersList =[document.getElementById('1_0').textContent, document.getElementById('1_1').textContent, document.getElementById('1_2').textContent];
         let allAnswersList = [document.getElementById('1_0').textContent, document.getElementById('1_1').textContent, document.getElementById('1_2').textContent, document.getElementById('2_0').textContent, document.getElementById('3_0').textContent, document.getElementById('4_0').textContent];
 
-        console.log(allAnswersList);
+
 
         if (answersList.includes("Maren") && answersList.includes("Mars 2020")){
             return new Wrong();

@@ -85,13 +85,14 @@ module.exports = class Communication extends StandardDisplay {
                 setTimeout(() =>{
                     document.getElementById('SendProgressBar').classList.add("invisible")
                     document.getElementById('sendpg').style.width = '0%';
+					document.getElementById('SendProgressBar').stageChangesContainer.add("invisible")
 
 					if(window.configAntenas === undefined || window.configAntenas === -1){
-						GlobalMecanics.sendPacket(,200);
+						GlobalMecanics.sendPacket('packet_2',2000)
 					}else if(window.configAntenas === 0){
-
+						GlobalMecanics.sendPacket('packet_3',2000)
 					}else if(window.configAntenas === 1){
-
+						GlobalMecanics.sendPacket('packet_4',2000)
 					}
 
                 },500)
