@@ -133,7 +133,7 @@ html {
     width: 100%;
 }
 
-.packageBuildOption:hover {
+.packetBuildOption:hover {
     text-shadow: 0 0 10px #ffffffee;
     cursor: pointer;
 }
@@ -197,7 +197,7 @@ button.option:hover {
     margin: .2em auto;
 }
 
-fieldset.package {
+fieldset.packet {
     text-rendering: geometricPrecision;
     display: block;
     margin-inline-end: 2px;
@@ -213,7 +213,7 @@ fieldset.package {
     border: 0.1em dashed white;
 }
 
-.packageTitle {
+.packetTitle {
     box-sizing: border-box;
     font-size: 1.6em !important;
     color: inherit;
@@ -236,7 +236,7 @@ img.char {
     height: auto;
 }
 
-textarea.package {
+textarea.packet {
     width: 100%;
     color: white;
     min-height: 30rem;

@@ -11,12 +11,12 @@ module.exports = class Display extends StandardDisplay {
         this.progress = 0;
 
         this.htmlComponent = document.createElement('fieldset');
-        this.htmlComponent.classList.add('package');
+        this.htmlComponent.classList.add('packet');
 
         this.stageChangesContainer = document.createElement('div');
 
         this.title = document.createElement('legend');
-        this.title.classList.add('packageTitle');
+        this.title.classList.add('packetTitle');
         this.title.textContent = 'Deep Space Network'
 
         this.htmlComponent.appendChild(this.title)

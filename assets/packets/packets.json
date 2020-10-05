@@ -1,8 +1,8 @@
 {
-	"package_1": {
-		"title": "package_1",
-		"package": {
-			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
+	"packet_1": {
+		"title": "packet_1",
+		"packet": {
+			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packets that will be received by each antenna. Check out the new information available in your manual.",
 			"Spacecrafts": {
 				"InSight_Lander": {
 					"priority": "MEDIUM",
@@ -27,10 +27,10 @@
 			}
 		}
 	},
-	"package_2": {
-		"title": "package_2",
-		"package": {
-			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
+	"packet_2": {
+		"title": "packet_2",
+		"packet": {
+			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packets that will be received by each antenna. Check out the new information available in your manual.",
 			"Spacecrafts": {
 				"InSight_Lander": {
 					"priority": "MEDIUM",
@@ -55,10 +55,10 @@
 			}
 		}
 	},
-	"package_3": {
-		"title": "package_3",
-		"package": {
-			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packages that will be received by each antenna. Check out the new information available in your manual.",
+	"packet_3": {
+		"title": "packet_3",
+		"packet": {
+			"Message": "Important mission for your first day, huh? Do you already know about the manual, right? Today we are going to take an important step in the conquest of the red planet. The Perseverance spacecraft will arrive here in a few hours and we need to schedule the packets that will be received by each antenna. Check out the new information available in your manual.",
 			"Spacecrafts": {
 				"InSight_Lander": {
 					"priority": "MEDIUM",
