@@ -1,16 +1,21 @@
 class Correct {
-    constructor(){
-        console.log('correto')
+    constructor() {
+        window.configAntenas = 1;
     }
 }
 class NotRedundant {
-    constructor(){
-        console.log('nao redundante')
+    constructor() {
+        window.configAntenas = 0;
     }
 }
 class Wrong {
-    constructor(){
-        console.log('errado')
+    constructor() {
+        window.configAntenas = -1;
     }
 }
-module.exports = {Correct, NotRedundant, Wrong}
+
+module.exports = {
+    Correct,
+    NotRedundant,
+    Wrong
+}

@@ -3,7 +3,6 @@ const PacketDisplay = require('./displays/packetDisplay/packetDisplay');
 const DSNDisplay = require('./displays/DSNdisplay/DSNdisplay');
 const SystemDisplay = require('./displays/systemDisplay/systemDisplay');
 const Communication = require('./displays/communication/communication')
-const TutorialDisplay = require('./displays/TutorialDisplay/TutorialDisplay');
 const DSNManualDisplay = require('./displays/manual/DSN.js')
 const MarsManualDisplay = require('./displays/manual/mars.js')
 const SpacecraftManualDisplay = require('./displays/manual/spacecrafts.js')
@@ -16,7 +15,6 @@ module.exports = class Display extends component {
 		this.DSNDisplay = new DSNDisplay();
 		this.SystemDisplay = new SystemDisplay();
 		this.Communication = new Communication();
-    	this.TutorialDisplay = new TutorialDisplay();
 		this.DSNManualDisplay = new DSNManualDisplay();
 		this.MarsManualDisplay = new MarsManualDisplay();
 		this.SpacecraftManualDisplay = new SpacecraftManualDisplay();
@@ -24,6 +22,7 @@ module.exports = class Display extends component {
 	}
 	addDisplay(display) {
 		this.displayGroup[display.displayName] = display.htmlComponent;
+		console.log(this.displayGroup[display.displayName]);
 		this.htmlComponent.appendChild(this.displayGroup[display.displayName]);
 		display.build();
 	}
@@ -39,7 +38,6 @@ module.exports = class Display extends component {
 		this.addDisplay(this.SystemDisplay);
 		this.addDisplay(this.DSNManualDisplay);
 		this.addDisplay(this.MarsManualDisplay);
-		this.addDisplay(this.TutorialDisplay);
 		this.addDisplay(this.SpacecraftManualDisplay);
 		this.addDisplay(this.Communication);
 

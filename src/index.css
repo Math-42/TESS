@@ -133,7 +133,7 @@ html {
     width: 100%;
 }
 
-.packageBuildOption:hover {
+.packetBuildOption:hover {
     text-shadow: 0 0 10px #ffffffee;
     cursor: pointer;
 }

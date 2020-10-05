@@ -1,5 +1,6 @@
 const StandardDisplay = require('../../standardDisplay');
 const Packet = require('../packetDisplay/packet');
+const GlobalMecanics = require('../../../globalMecanics/globalMecanics');
 
 module.exports = class Communication extends StandardDisplay {
 
@@ -39,7 +40,7 @@ module.exports = class Communication extends StandardDisplay {
 	}
 
 	firstMissionMock() {
-		this.setAnswers('As antenas já estão prontas!', 'Falar a mesma coisa da primeira sendo mais pessoal', 'Not necessary')
+		this.setAnswers('Antennas configured', 'Antennas are ready to work, waiting for your return', "I have just configured the antenna and I'm waiting for your answer")
 	}
 
 	preparePacket(evt) {
@@ -84,6 +85,15 @@ module.exports = class Communication extends StandardDisplay {
                 setTimeout(() =>{
                     document.getElementById('SendProgressBar').classList.add("invisible")
                     document.getElementById('sendpg').style.width = '0%';
+
+					if(window.configAntenas === undefined || window.configAntenas === -1){
+						GlobalMecanics.sendPacket(,200);
+					}else if(window.configAntenas === 0){
+
+					}else if(window.configAntenas === 1){
+
+					}
+
                 },500)
                 
             }

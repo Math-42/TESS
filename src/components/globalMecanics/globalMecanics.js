@@ -8,7 +8,12 @@ module.exports = class GlobalMecanics {
 			}));
 		}, timeInMs);
 	}
+
 	static getPacket(packetName) {
 		return packets[packetName]
+	}
+	
+	static demoEnd(){
+
 	}
 }

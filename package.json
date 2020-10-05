@@ -11,6 +11,7 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
+  "author": "nadir",
   "keywords": [],
   "license": "MIT",
   "config": {

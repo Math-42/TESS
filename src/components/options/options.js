@@ -104,7 +104,7 @@ module.exports = class Options extends component {
 		this.manualOptionGroup.addOption('./Mars.txt', this.callMenuFunction('Manual_Mars'));
 		this.manualOptionGroup.addOption('./Spacecrafts.txt', this.callMenuFunction('Manual_Spacecraft'));
 		this.manualOptionGroup.addOption('./WAP.txt', this.callMenuFunction('DSNdisplay'));
-		this.manualOptionGroup.addOption('./entanglement.txt', this.callMenuFunction('DSNdisplay'));
+		this.manualOptionGroup.addOption('./Entanglement.txt', this.callMenuFunction('DSNdisplay'));
 	}
 
 	build() {
