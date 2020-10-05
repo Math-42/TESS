@@ -6,8 +6,8 @@ module.exports = class Display extends StandardDisplay {
     }
     build() {
         this.htmlComponent.innerHTML = `
-			<fieldset class="package">
-                <legend class="packageTitle">Lander</legend>
+			<fieldset class="packet">
+                <legend class="packetTitle">Lander</legend>
                     <div class= "section">
                         <h1>Perseverance</h1>
                         <span class="col glow" align='justify'>&nbsp;&nbsp;The Perseverance rover is part of the Mars 2020 Mission and is a key for the future of researches on Mars. It will help us to find out more about the possibility of living on Mars. The rover will collect rock and soil samples to help us seek signs of ancient life.</span>
@@ -22,8 +22,8 @@ module.exports = class Display extends StandardDisplay {
                     </div>
             </fieldset>
 
-            <fieldset class="package">
-                <legend class="packageTitle">Orbiters</legend>
+            <fieldset class="packet">
+                <legend class="packetTitle">Orbiters</legend>
                 <div class= "section">
                     <h1>Mars Odyssey</h1>
                 </div>

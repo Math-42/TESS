@@ -10,7 +10,7 @@ module.exports = class Options extends component {
 		this.mainMenuOptionGroup = new OptionGroup('mainMenuOptionGroup');
 		this.toolsOptionGroup = new OptionGroup('toolsOptionGroup');
 		this.manualOptionGroup = new OptionGroup('manualOptionGroup');
-		this.packageOptionGroup = new OptionGroup('packageOptionGroup');
+		this.packetOptionGroup = new OptionGroup('packetOptionGroup');
 		this.optionsGroups = {};
 	}
 
@@ -40,11 +40,11 @@ module.exports = class Options extends component {
 
 	}
 
-	openPackageFunction(name) {
+	openPacketFunction(name) {
 
 		return () => {
 
-			window.dispatchEvent(new CustomEvent('openPackage', {
+			window.dispatchEvent(new CustomEvent('openPacket', {
 				detail: name,
 			}));
 		}
@@ -59,15 +59,15 @@ module.exports = class Options extends component {
 		}
 	}
 
-	packageOptionGroupOpt() {
-		this.addOptionGroup(this.packageOptionGroup);
-		this.optionsGroups['packageOptionGroup'] = this.packageOptionGroup;
+	packetOptionGroupOpt() {
+		this.addOptionGroup(this.packetOptionGroup);
+		this.optionsGroups['packetOptionGroup'] = this.packetOptionGroup;
 
-		this.packageOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
-		this.packageOptionGroup.addOption('./Package1.bag', this.openPackageFunction('package_1'))
+		this.packetOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
+		this.packetOptionGroup.addOption('./Packet1.bag', this.openPacketFunction('packet_1'))
 
-		window.addEventListener('addNewPackage', (evt) => {
-			this.packageOptionGroup.addOption('./'+ evt.detail + '.bag', this.openPackageFunction(evt.detail))
+		window.addEventListener('addNewPacket', (evt) => {
+			this.packetOptionGroup.addOption('./'+ evt.detail + '.bag', this.openPacketFunction(evt.detail))
 		});
 	}
 
@@ -76,11 +76,9 @@ module.exports = class Options extends component {
 		this.optionsGroups['mainMenuOptionGroup'] = this.mainMenuOptionGroup;
 
 		this.mainMenuOptionGroup.addOption('/Readme.md', this.callMenuFunction('SystemDisplay'))
-    
-    this.mainMenuOptionGroup.addOption('/Intro.gif', this.callMenuFunction('TutorialDisplay'))
 
     
-		this.mainMenuOptionGroup.addOption('/Packages', this.callOptionGroupFunction('packageOptionGroup'))
+		this.mainMenuOptionGroup.addOption('/Packets', this.callOptionGroupFunction('packetOptionGroup'))
 		this.mainMenuOptionGroup.addOption('/Communication', this.callMenuFunction('Communication'))
 		this.mainMenuOptionGroup.addOption('/Manual', this.callOptionGroupFunction('manualOptionGroup'))
 		this.mainMenuOptionGroup.addOption('/Tools', this.callOptionGroupFunction('toolsOptionGroup'))
@@ -101,7 +99,7 @@ module.exports = class Options extends component {
 		this.optionsGroups['tools'] = this.manualOptionGroup.htmlComponent;
 
 		this.manualOptionGroup.addOption('<= cd ..', this.callOptionGroupFunction('mainMenuOptionGroup'));
-		this.manualOptionGroup.addOption('./Packages.txt', this.callMenuFunction('DSNdisplay'));
+		this.manualOptionGroup.addOption('./Packets.txt', this.callMenuFunction('DSNdisplay'));
 		this.manualOptionGroup.addOption('./DSN.txt', this.callMenuFunction('Manual_DNS'));
 		this.manualOptionGroup.addOption('./Mars.txt', this.callMenuFunction('Manual_Mars'));
 		this.manualOptionGroup.addOption('./Spacecrafts.txt', this.callMenuFunction('Manual_Spacecraft'));
@@ -113,7 +111,7 @@ module.exports = class Options extends component {
 
 		this.mainMenuOptionGroupOpt()
 		this.toolsOptionGroupOpt()
-		this.packageOptionGroupOpt()
+		this.packetOptionGroupOpt()
 		this.manualOptionGroupOpt()
 
 		this.setCurrentOptionGroup('mainMenuOptionGroup');

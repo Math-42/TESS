@@ -1,5 +1,5 @@
 const component = require('../component');
-const PackageDisplay = require('./displays/packageDisplay/packageDisplay');
+const PacketDisplay = require('./displays/packetDisplay/packetDisplay');
 const DSNDisplay = require('./displays/DSNdisplay/DSNdisplay');
 const SystemDisplay = require('./displays/systemDisplay/systemDisplay');
 const Communication = require('./displays/communication/communication')
@@ -12,7 +12,7 @@ module.exports = class Display extends component {
 	constructor() {
 		super();
 		this.htmlComponent = document.createElement('div');
-		this.packageDisplay = new PackageDisplay();
+		this.packetDisplay = new PacketDisplay();
 		this.DSNDisplay = new DSNDisplay();
 		this.SystemDisplay = new SystemDisplay();
 		this.Communication = new Communication();
@@ -34,7 +34,7 @@ module.exports = class Display extends component {
 	}
 	build() {
 		document.getElementById('display').appendChild(this.htmlComponent);
-		this.addDisplay(this.packageDisplay);
+		this.addDisplay(this.packetDisplay);
 		this.addDisplay(this.DSNDisplay);
 		this.addDisplay(this.SystemDisplay);
 		this.addDisplay(this.DSNManualDisplay);

@@ -1,6 +1,6 @@
 const StandardDisplay = require('../../standardDisplay');
 
-module.exports = class PackageDisplay extends StandardDisplay {
+module.exports = class PacketDisplay extends StandardDisplay {
 	constructor() {
 		super('SystemDisplay');
 	}

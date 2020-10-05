@@ -1,14 +1,14 @@
-const packages = require('../../../assets/packages/packages.json');
+const packets = require('../../../assets/packets/packets.json');
 module.exports = class GlobalMecanics {
-	static sendPackage(packageName, timeInMs) {
+	static sendPacket(packetName, timeInMs) {
 
 		setTimeout(() => {
-			window.dispatchEvent(new CustomEvent('addNewPackage', {
-				detail: packageName,
+			window.dispatchEvent(new CustomEvent('addNewPacket', {
+				detail: packetName,
 			}));
 		}, timeInMs);
 	}
-	static getPackage(packageName) {
-		return packages[packageName]
+	static getPacket(packetName) {
+		return packets[packetName]
 	}
 }
