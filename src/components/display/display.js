@@ -43,7 +43,7 @@ module.exports = class Display extends component {
 		this.addDisplay(this.SpacecraftManualDisplay);
 		this.addDisplay(this.Communication);
 
-		this.setCurrentDisplay('SystemDisplay')
+        this.setCurrentDisplay('SystemDisplay')
 
         window.addEventListener('setCurrentDisplay', (evt) => {
 
