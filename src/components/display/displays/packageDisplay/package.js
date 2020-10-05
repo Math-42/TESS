@@ -1,7 +1,5 @@
-
-
-module.exports = class Package{
-	constructor(packageData){
+module.exports = class Package {
+	constructor(packageData) {
 		this.htmlComponent = document.createElement('fieldset');
 		this.htmlComponent.classList.add('package');
 		this.dataContainer = document.createElement('textarea');
@@ -11,12 +9,12 @@ module.exports = class Package{
 		this.title = this.data.title;
 		this.build();
 	}
-	build(){
+	build() {
 		let legend = document.createElement('legend');
 		legend.className = 'packageTitle'
 
 		legend.textContent = this.data.title;
-		this.dataContainer.value = JSON.stringify(this.data.package,undefined,4);
+		this.dataContainer.value = JSON.stringify(this.data.package, undefined, 4);
 		this.dataContainer.disabled = true;
 
 		this.htmlComponent.appendChild(legend);

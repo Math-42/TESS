@@ -68,6 +68,11 @@ html {
 	pointer-events: none;
 }
 
+#answer-box{
+    border: 2px solid white;
+    text-align: right;
+}
+
 #tutorial{
     background-color: black;
     width: 100%;
@@ -129,6 +134,11 @@ html {
     padding-left: 2em !important;
     padding-right: 2em !important;
     width: 100%;
+}
+
+.packageBuildOption:hover{  
+    text-shadow: 0 0 10px #ffffffee;
+    cursor: pointer;
 }
 
 #menus {
