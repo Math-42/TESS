@@ -26,8 +26,8 @@ class MainWindow extends component {
 
     build() {
 
-        // const player = new Audio('../assets/music/endlessVoyage.mp3');
-        // player.play();
+        const player = new Audio('../assets/music/endlessVoyage.mp3');
+        player.play();
 
         let duracao = Date.now();
 
