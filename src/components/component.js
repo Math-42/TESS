@@ -1,11 +1,11 @@
-module.exports = class Component{
-	constructor(){
+module.exports = class Component {
+    constructor() {
 
-	}
-	init(){
-		
-	}
-	build(){
+    }
+    init() {
 
-	}
+    }
+    build() {
+
+    }
 }
