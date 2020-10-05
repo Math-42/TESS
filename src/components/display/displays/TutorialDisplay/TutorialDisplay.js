@@ -1,7 +1,7 @@
-const StandardDisplay = require('../../standardDisplay');
+const Component = require('../../../component');
 
 
-module.exports = class TutorialDisplay extends StandardDisplay {
+module.exports = class TutorialDisplay extends Component {
     constructor() {
         super("TutorialDisplay");
         this.timestep = 2200;
@@ -20,7 +20,7 @@ module.exports = class TutorialDisplay extends StandardDisplay {
             text: "Your main assignment is to maintain a effective telecom system to keep in touch with astronauts in Mars"
         }, {
             time: 7,
-            role: "text",
+            role: "response",
             text: "You mean, talk to them on phone?"
         }, {
             time: 8,
@@ -114,6 +114,25 @@ module.exports = class TutorialDisplay extends StandardDisplay {
         imgActor.className = "actor";
         divActors.appendChild(imgActor);
 
+        let divBtn = document.createElement('div');
+        let btnGo = document.createElement('button');
+        btnGo.innerText = "Open Communications Control";
+        btnGo.addEventListener('click', (ev) => {
+            let tut = document.getElementById("tutorial");
+            tut.style.display = 'none';
+            let ms = document.getElementById("mainContainer");
+            ms.style.display = 'flex';
+
+            window.dispatchEvent(new CustomEvent('showDisplay', {
+                detail: "SystemDisplay",
+            }));
+
+        });
+        divBtn.appendChild(btnGo);
+        divBtn.className = "openBtn";
+        divActors.appendChild(divBtn);
+
+
         let imgChar = document.createElement('img');
         imgChar.setAttribute("src", "../images/NASAemploye.gif");
         imgChar.className = "char";
@@ -129,11 +148,21 @@ module.exports = class TutorialDisplay extends StandardDisplay {
         divPhone.className = "phone";
         divPhone.appendChild(divScreen);
 
+
+
+
+
+
         let divTerminal = document.createElement('div');
         divTerminal.className = "terminal";
         divTerminal.appendChild(divPhone);
 
-        this.htmlComponent.innerHTML = `<div class='terminal'> ${divTerminal.innerHTML} </div>`;
+
+        // this.htmlComponent.innerHTML = `<div cslass='terminal'> ${divTerminal.innerHTML} </div>`;
+        if (document.getElementById("tutorial")) {
+            document.getElementById("tutorial").appendChild(divTerminal);
+        }
+
 
         window.addEventListener('showDisplay', (event) => {
             if (event.detail == "TutorialDisplay") {

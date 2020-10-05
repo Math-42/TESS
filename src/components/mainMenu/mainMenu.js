@@ -1,5 +1,5 @@
 const component = require('../component')
-
+const TutorialDisplay = require("../display/displays/TutorialDisplay/TutorialDisplay");
 module.exports = class MainMenu extends component {
     constructor() {
         super();
@@ -8,9 +8,11 @@ module.exports = class MainMenu extends component {
         this.exitOpt = document.createElement('button');
     }
     newGame() {
-        document.getElementById("tutorial").style.display = 'none'
-        document.getElementById("mainContainer").style.display = 'flex'
+        document.getElementById("tutorial").style.display = 'block'
+            // document.getElementById("mainContainer").style.display = 'flex'
 
+        let tut = new TutorialDisplay()
+        tut.build();
         document.getElementById("mainMenu").style.display = 'none'
         window.dispatchEvent(new CustomEvent('showDisplay', {
             detail: "TutorialDisplay",

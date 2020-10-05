@@ -38,42 +38,44 @@ html {
     text-shadow: 0 0 10px #ffffff69;
 }
 
-#mainMenu{
-	height: 100%;
-	align-content: space-around;
-	background-image: radial-gradient(rgb(0 0 0 / 60%), black 80%);
-	color: white;
-	overflow-y: hidden;
-	overflow-x: hidden;
+#mainMenu {
+    height: 100%;
+    align-content: space-around;
+    background-image: radial-gradient(rgb(0 0 0 / 60%), black 80%);
+    color: white;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
-#mainMenuLogo{
-	width: 50%;
-	margin-left: 25%;
+#mainMenuLogo {
+    width: 50%;
+    margin-left: 25%;
 }
 
 #mainMenu:before {
-	content: " ";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background: linear-gradient(to bottom,
-			rgba(18, 16, 16, 0) 50%,
-			rgba(0, 0, 0, 0.25) 50%);
-	background-size: 100% 5px;
-	z-index: 2;
-	pointer-events: none;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 5px;
+    z-index: 2;
+    pointer-events: none;
 }
 
-#tutorial{
+#answer-box {
+    border: 2px solid white;
+    text-align: right;
+}
+
+#tutorial {
     background-color: black;
     width: 100%;
     height: 100%;
 }
-
 
 #display {
     font-size: 1.6em !important;
@@ -129,6 +131,11 @@ html {
     padding-left: 2em !important;
     padding-right: 2em !important;
     width: 100%;
+}
+
+.packageBuildOption:hover {
+    text-shadow: 0 0 10px #ffffffee;
+    cursor: pointer;
 }
 
 #menus {
@@ -223,7 +230,8 @@ img.planeta {
     height: 8%;
 }
 
-img.actor , img.char{
+img.actor,
+img.char {
     width: 30% !important;
     height: auto;
 }
@@ -307,6 +315,12 @@ img.antenna {
     align-items: center;
 }
 
-div.section{
+div.section {
     margin: 10px 0px 10px 0px;
+}
+
+.openBtn {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
 }
