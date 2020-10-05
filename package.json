@@ -1,8 +1,9 @@
 {
-  "name": "nasaspaceapp",
-  "productName": "nasaspaceapp",
+  "name": "TESS",
+  "productName": "TESS",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Telecom Engineering Space Simulator",
+  "author": "./nadir",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -21,7 +22,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "nasaspaceapp"
+            "name": "TESS"
           }
         },
         {

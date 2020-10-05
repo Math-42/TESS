@@ -8,7 +8,7 @@ const url = require('url');
 const ipc = electron.ipcMain;
 const dialog = require('electron').dialog;
 
-const devMode = true;
+const devMode = false;
 let mainWindow;
 
 // Enable live reload for all the files inside your project directory
