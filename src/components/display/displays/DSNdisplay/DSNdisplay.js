@@ -3,6 +3,7 @@ const {
 } = require('electron');
 const StandardDisplay = require('../../standardDisplay');
 const Antenna = require('./antenna');
+const {Correct, NotRedundant, Wrong} = require('./classes.js');
 
 module.exports = class Display extends StandardDisplay {
     constructor() {
@@ -28,7 +29,7 @@ module.exports = class Display extends StandardDisplay {
 
         this.Antenna1 = new Antenna('Spain', 3,1);
         this.Antenna2 = new Antenna('Spain', 1,2);
-        this.Antenna3 = new Antenna('USA', 1,2);
+        this.Antenna3 = new Antenna('USA', 1,3);
         this.Antenna4 = new Antenna('Australia', 1,4);
     }
 
@@ -64,6 +65,26 @@ module.exports = class Display extends StandardDisplay {
 
     }
 
+    checkAnswers(){
+        let answersList =[document.getElementById('1_0').textContent, document.getElementById('1_1').textContent, document.getElementById('1_2').textContent];
+        let allAnswersList = [document.getElementById('1_0').textContent, document.getElementById('1_1').textContent, document.getElementById('1_2').textContent, document.getElementById('2_0').textContent, document.getElementById('3_0').textContent, document.getElementById('4_0').textContent];
+
+        console.log(allAnswersList);
+
+        if (answersList.includes("Maren") && answersList.includes("Mars 2020")){
+            return new Wrong();
+        } else if (answersList.includes("InSight Lander") && answersList.includes("Mars 2020")){
+            return new Wrong();
+        } else if (answersList.filter((v) => (v === "Mars 2020")).length == 2){
+            return new NotRedundant();
+        }
+        else if (allAnswersList.filter((v) => (v === "Mars 2020")).length !== 2){
+            return new NotRedundant();
+        } else {
+            return new Correct();
+        }
+    }
+
     build() {
         this.htmlContainer.classList.add('row');
 
@@ -73,7 +94,9 @@ module.exports = class Display extends StandardDisplay {
         this.stageChangeBtn.className = 'btn-terminal mb-4 col-3'
 
         this.stageChangeBtn.onclick = () => {
+            let answer;
             this.loadProgress();
+            answer = this.checkAnswers();
         }
 
         this.loadBarBackground = document.createElement('div')
